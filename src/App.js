@@ -19,7 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />     
       </Routes>
     </div>
   );
