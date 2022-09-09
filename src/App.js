@@ -8,6 +8,10 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
+import ListTasks from './components/ListTasks';
+import ListChilds from './components/ListChilds';
+import Count from './components/Count'
+import InfoChild from './components/InfoChild'
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/ListChilds" element={<ListChilds />} />
+        <Route path="/ListTasks" element={<ListTasks />} />
+        <Route path="/Count" element={<Count />} />
+        <Route path="/InfoChild/:id" element={<InfoChild />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />     
       </Routes>
