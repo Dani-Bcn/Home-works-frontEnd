@@ -1,4 +1,4 @@
-/* eslint-disable array-callback-return */
+
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -13,10 +13,14 @@ export default function InfoChild() {
   const [child, setChild] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      try {
+      try { 
         console.log(id);
         const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);       
-        setChild(getChild.data.data)
+        {getChild &&
+         setChild(getChild) 
+        console.log(child) 
+        }
+       
       } catch (error) {
         console.error(error);
       } 
@@ -30,10 +34,10 @@ export default function InfoChild() {
              <h1 >{child.name}</h1>
              <h6> Age {actualYear - child.yearOfBirth}</h6>
              <img width={100} src={child.image}/>  
-             {child.tasks.map((e)=>{
-                  console.log(e)
-             })}                                                  
-          </div>
+            {/* {child.tasks.map(e=>{
+                
+            }       ) }  */}
+             </div>
         )}
         {!child && <p>child not found</p>}
     </div>

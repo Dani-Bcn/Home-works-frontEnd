@@ -26,11 +26,9 @@ export default function ListChilds() {
         <div> 
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.
               
-               <div key={ele._id} >
-                  
+               <div key={ele._id} >                  
           <h6  onClick={()=>navigate(`/InfoChild/${ele._id}`)}> Name: {ele.name}</h6>
-               <img src={ele.image} width="100" alt="" />
-            
+               <img src={ele.image} width="100" alt="" />            
                </div>
             ))}    
            <button onClick={()=>navigate("/AddChild")}>Add new child</button>
