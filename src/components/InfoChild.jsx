@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ListTasks from './ListTasks';
 export default function InfoChild() {
   const {id} = useParams() 
   const date = new Date();  
@@ -23,13 +24,15 @@ export default function InfoChild() {
     getData();
   }, []); 
   return (
-    <div>
-      <p>Info child</p> 
+    <div>     
         {child && (
           <div>      
-             <h6 > Name  {child.name}</h6>
+             <h1 >{child.name}</h1>
              <h6> Age {actualYear - child.yearOfBirth}</h6>
-             <img width={100} src={child.image}/>                                          
+             <img width={100} src={child.image}/>  
+             {child.tasks.map((e)=>{
+                  console.log(e)
+             })}                                                  
           </div>
         )}
         {!child && <p>child not found</p>}

@@ -12,7 +12,7 @@ import ListTasks from './components/ListTasks';
 import ListChilds from './components/ListChilds';
 import Count from './components/Count'
 import InfoChild from './components/InfoChild'
-
+import AddChild from './components/AddChild'
 function App() {
   return (
     <div className="App">
@@ -26,11 +26,11 @@ function App() {
         <Route path="/ListTasks" element={<ListTasks />} />
         <Route path="/Count" element={<Count />} />
         <Route path="/InfoChild/:id" element={<InfoChild />} />
+        <Route path="/AddChild/" element={<AddChild />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />     
       </Routes>
     </div>
   );
 }
-
 export default App;

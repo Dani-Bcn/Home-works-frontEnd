@@ -13,7 +13,6 @@ export default function ListChilds() {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/`); 
         //console.log(response.data.data[0].name);
         setChilds(response.data.data)
-
       } catch (error) {
         console.error(error);
       }
@@ -31,8 +30,10 @@ export default function ListChilds() {
                   
           <h6  onClick={()=>navigate(`/InfoChild/${ele._id}`)}> Name: {ele.name}</h6>
                <img src={ele.image} width="100" alt="" />
+            
                </div>
-            ))}          
+            ))}    
+           <button onClick={()=>navigate("/AddChild")}>Add new child</button>
         </div>)}
       {!childs && <p>Childs not found</p>}
     </div>
