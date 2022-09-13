@@ -19,6 +19,9 @@ export default function ListChilds() {
     }
     getData();
   }, []);
+
+
+
   return (
     <div>
       <p>Childs</p>
@@ -27,8 +30,10 @@ export default function ListChilds() {
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.
               
                <div key={ele._id} >                  
-          <h6  onClick={()=>navigate(`/InfoChild/${ele._id}`)}> Name: {ele.name}</h6>
-               <img src={ele.image} width="100" alt="" />            
+                  <NavLink to={`/InfoChild/${ele._id}`}>
+                    <h3   >{ele.name}</h3>
+                    <img  src={ele.imageUrl} width="100" alt="" />    
+                  </NavLink>           
                </div>
             ))}    
            <button onClick={()=>navigate("/AddChild")}>Add new child</button>

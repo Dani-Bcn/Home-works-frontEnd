@@ -21,9 +21,10 @@ export default function Count() {
       <p>Count</p>
       {count && (
         <div>      
-            <h6 > Name  {count.username}</h6><button>Edit</button>
-            <h6 > Email {count.email}</h6><button>Edit</button>  
-            <h6 > Password ******** </h6><button>Edit</button>         
+            <h6 > Name  {count.username}</h6>
+            <h6 > Email {count.email}</h6>
+            <h6 > Password ******** </h6>
+            <button>Edit</button>         
         </div>
         )}
       {!count && <p>count not found</p>}

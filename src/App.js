@@ -13,6 +13,7 @@ import ListChilds from './components/ListChilds';
 import Count from './components/Count'
 import InfoChild from './components/InfoChild'
 import AddChild from './components/AddChild'
+import EditChild from './components/EditChild'
 function App() {
   return (
     <div className="App">
@@ -27,7 +28,9 @@ function App() {
         <Route path="/Count" element={<Count />} />
         <Route path="/InfoChild/:id" element={<InfoChild />} />
         <Route path="/AddChild/" element={<AddChild />} />
+        <Route path="EditChild/:id" element={<EditChild />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
+
         <Route path="*" element={<ErrorPage />} />     
       </Routes>
     </div>
