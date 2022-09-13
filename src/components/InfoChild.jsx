@@ -11,7 +11,7 @@
   console.log(actualYear)
   const params = useParams(); //then use with params.id
   const [child, setChild] = useState(null);
-  
+
   useEffect(() => {
     const getData = async () => {
       try {      
@@ -67,8 +67,7 @@
         {!child && <p>child not found</p>}
         <NavLink to={`/EditChild/${id}`}>
           <button >Edit child</button>
-        </NavLink>
-           
+        </NavLink>           
           <NavLink to="/ListTasks">
             <button>Add tasks</button>
           </NavLink>

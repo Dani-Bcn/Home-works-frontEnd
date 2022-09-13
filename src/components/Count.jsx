@@ -7,8 +7,7 @@ export default function Count() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/`); 
-   
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/`);    
         setCount(response.data.data[0])
       } catch (error) {
         console.error(error);

@@ -3,15 +3,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink ,useNavigate} from 'react-router-dom';
+
 export default function ListChilds() {
+  const storedToken = localStorage.getItem('authToken');
   const navigate = useNavigate()
   // const params = useParams(); then use with params.id
-  const [childs, setChilds] = useState(null);
+  const [childs, setChilds] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/`); 
-        //console.log(response.data.data[0].name);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/mine`, { headers: { Authorization: `Bearer ${storedToken}` }});
         setChilds(response.data.data)
       } catch (error) {
         console.error(error);
@@ -19,9 +20,6 @@ export default function ListChilds() {
     }
     getData();
   }, []);
-
-
-
   return (
     <div>
       <p>Childs</p>

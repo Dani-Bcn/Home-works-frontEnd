@@ -1,7 +1,9 @@
 /* eslint-disable array-callback-return */
 
 import React, { useEffect, useState } from 'react';
+import { AuthContext } from "../context/AuthContext";
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 export default function ListTasks() {
   // const params = useParams(); then use with params.id
@@ -22,7 +24,7 @@ export default function ListTasks() {
     getData();
   }, []);
 const handleClick=((e)=>{
-  console.log(e.target)
+  console.log(e)
 })
   return (
     <div>
@@ -30,11 +32,12 @@ const handleClick=((e)=>{
       {tasks && (
         <div> 
             {tasks.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.
-               <div key={ele._id} >
-               <h6 > Task : {ele.name}</h6>         
-               <img onClick={(e)=>handleClick(e)}src={ele.image} width="100" alt="image" />
+         
+                <div key={ele._id} >
+               <h6 > Task : {ele._id}</h6>         
+               <img onClick={(e)=>handleClick(e)} src={ele.image} width="100" alt="image" />
                <p>Points  {ele.points}</p>
-               </div>
+               </div>             
             ))}          
         </div>)}
       {!tasks && <p>Tasks not found</p>}

@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 
 export default function AddChild() {
+  const storedToken = localStorage.getItem('authToken');
   const date = new Date();  
   const actualYear = date.getFullYear();
   const[tasks, setTasks] =useState(null)    
@@ -30,7 +31,7 @@ export default function AddChild() {
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.files[0]);
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/child/upload`, uploadData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/child/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` }});
       // console.log(response.data.fileUrl);
 
       setChild(prev => {
@@ -49,7 +50,7 @@ export default function AddChild() {
   const handleSubmit = async (e) => {  
     e.preventDefault();
     try {
-        await axios.post(`${process.env.REACT_APP_API_URL}/child`, { name: child.name, yearOfBirth: child.yearOfBirth ,  tasks:child.tasks, imageUrl:child.imageUrl});           
+        await axios.post(`${process.env.REACT_APP_API_URL}/child`, { name: child.name, yearOfBirth: child.yearOfBirth ,  tasks:child.tasks, imageUrl:child.imageUrl}, { headers: { Authorization: `Bearer ${storedToken}` } });           
         toast.success('Project created successfully')
         navigate("/ListChilds")
     } catch (error) {
