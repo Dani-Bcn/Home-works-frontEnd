@@ -11,7 +11,6 @@ export default function Signup() {
   const [passwordControl, setPasswordControl] = useState('');
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setUser(prev => {
       return {
@@ -20,7 +19,6 @@ export default function Signup() {
       }
     })
   }
-
   useEffect(() => {
     if (password !== passwordControl) {
       setErrorMessage("Passwords don't match")
@@ -29,7 +27,6 @@ export default function Signup() {
     }
     // eslint-disable-next-line
   }, [passwordControl])
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -39,7 +36,6 @@ export default function Signup() {
       setErrorMessage(error.response.data.error)
     }
   }
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
