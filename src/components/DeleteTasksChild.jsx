@@ -49,7 +49,8 @@ const handleDelete = async (e)=>{
                     </div>               
                 )            
             }) 
-        )}                       
+        )}          
+           <NavLink to="/ListChilds"><button>Done</button> </NavLink>                  
     </div>
   )
 }      

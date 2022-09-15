@@ -18,7 +18,7 @@ export default function Count() {
     }
     getData();
   }, []);
-
+  
    return (
     <div>     
       <p>Count</p>

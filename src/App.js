@@ -11,7 +11,7 @@ import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 import ListTasks from './components/ListTasks';
 import ListChilds from './components/ListChilds';
-import Count from './components/Count'
+import User  from './components/User'
 import InfoChild from './components/InfoChild'
 import AddChild from './components/AddChild'
 import EditChild from './components/EditChild'
@@ -25,12 +25,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/PageChild/:id" element={<PageChild />} />
-        <Route path="/Home2" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/ListChilds" element={<ListChilds />} />
         <Route path="/ListTasks/:id" element={<ListTasks />} />
-        <Route path="/Count" element={<Count />} />
+        <Route path="/User" element={<User/>} />
         <Route path="/InfoChild/:id" element={<InfoChild />} />
         <Route path="/AddChild/" element={<AddChild />} />
         <Route path="EditChild/:id" element={<EditChild />} />

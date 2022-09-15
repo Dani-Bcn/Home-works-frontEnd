@@ -53,7 +53,8 @@ return (
           <h2>Your homework </h2> 
            <h1 >{child.name}</h1>
            <h6> Age {actualYear - child.yearOfBirth}</h6>   
-           <img width={100} src={child.imageUrl}/>   
+           <img width={100} src={child.imageUrl}/> 
+        {console.log()}
           {child.tasks.map(e=>{
             return( 
               <div key={e._id}>
@@ -63,6 +64,7 @@ return (
               </div>                          
             )                
           })}   
+
         </div>
       )}      
       {!child && <p>child not found</p>}

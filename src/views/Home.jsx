@@ -35,12 +35,12 @@ export default function Home() {
   <h2>Children's section</h2>
   {console.log(childs, isChilds)}
   {isChilds && (
-        <div className='containerShows'> 
+        <div > 
           <p>What tasks do I have for today?</p>
      
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.    
                <NavLink  key={ele._id} to={`/PageChild/${ele._id}`}>
-                  <div >                
+                  <div className='containerShows'>                
                     <h3>{ele.name}</h3>
                     <img src={ele.imageUrl}  alt="img_Child" />                           
                </div>
