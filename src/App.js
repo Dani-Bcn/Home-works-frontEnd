@@ -16,6 +16,7 @@ import InfoChild from './components/InfoChild'
 import AddChild from './components/AddChild'
 import EditChild from './components/EditChild'
 import UpImages from './components/UpImages'
+import DeleteTasksChild from './components/DeleteTasksChild'
 function App() {
   return (
     <div className="App">
@@ -35,7 +36,8 @@ function App() {
         <Route path="EditChild/:id" element={<EditChild />} />
         <Route path="UpImages" element={<UpImages />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
-        <Route path="*" element={<ErrorPage />} />     
+        <Route path="*" element={<ErrorPage />} />  
+        <Route path="DeleteTasksChild/:id" element={<DeleteTasksChild />} />     
       </Routes>
     </div>
   );

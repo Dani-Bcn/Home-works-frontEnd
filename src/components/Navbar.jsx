@@ -11,7 +11,6 @@ export default function Navbar() {
       {user && <p>Hello {user.username}</p> }
       <ul>
         <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/">Home</NavLink></li>
-
         {!isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/signup">Sign up</NavLink></li>}
         {!isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/login">Login</NavLink></li>}
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds">Childs</NavLink></li>}

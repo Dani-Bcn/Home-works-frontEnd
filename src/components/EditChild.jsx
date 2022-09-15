@@ -9,7 +9,6 @@ console.log(actualYear)
 const navigate = useNavigate();
 const { id } = useParams();
 const [child, setChild] = useState(null);
-
 //primero obtenemos las datos de Child
   useEffect(() => {
     const getData = async () => {

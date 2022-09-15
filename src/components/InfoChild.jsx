@@ -70,7 +70,7 @@
           <NavLink to={`/ListTasks/${id}`}>
             <button>Add tasks</button>
           </NavLink>
-          <button>Delete tasks</button>
+          <NavLink to={`/DeleteTasksChild/${id}`}><button>Delete tasks</button></NavLink>
           <button  onClick={()=>handleDelete()}>Delete child</button>
     </div>   
   )

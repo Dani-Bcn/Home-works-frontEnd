@@ -31,19 +31,18 @@ export default function Home() {
     <div>
       <h1>Homework for kids</h1>    
    {isLoggedIn && (
-<div>
+<div className='containerSection'> 
   <h2>Children's section</h2>
-  <h2>{text}</h2>
   {console.log(childs, isChilds)}
   {isChilds && (
-        <div> 
+        <div className='containerShows'> 
           <p>What tasks do I have for today?</p>
      
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.    
                <NavLink  key={ele._id} to={`/PageChild/${ele._id}`}>
-                  <div with="100">                
+                  <div >                
                     <h3>{ele.name}</h3>
-                    <img src={ele.imageUrl} width="100" alt="" />                           
+                    <img src={ele.imageUrl}  alt="img_Child" />                           
                </div>
               </NavLink>                    
             ))}              
