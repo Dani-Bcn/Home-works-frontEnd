@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './views/Home';
+import PageChild from './components/PageChild';
 import Navbar from './components/Navbar';
 import ErrorPage from './views/ErrorPage';
 import Signup from './views/auth/Signup';
@@ -22,18 +23,18 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/PageChild/:id" element={<PageChild />} />
+        <Route path="/Home2" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/ListChilds" element={<ListChilds />} />
-        <Route path="/ListTasks" element={<ListTasks />} />
+        <Route path="/ListTasks/:id" element={<ListTasks />} />
         <Route path="/Count" element={<Count />} />
         <Route path="/InfoChild/:id" element={<InfoChild />} />
         <Route path="/AddChild/" element={<AddChild />} />
         <Route path="EditChild/:id" element={<EditChild />} />
         <Route path="UpImages" element={<UpImages />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
-
-
         <Route path="*" element={<ErrorPage />} />     
       </Routes>
     </div>

@@ -33,7 +33,6 @@ export default function AddChild() {
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/child/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` }});
       // console.log(response.data.fileUrl);
-
       setChild(prev => {
         return {
           ...prev,

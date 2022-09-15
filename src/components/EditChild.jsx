@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
 export default function EditChild() {
 const date = new Date();
 const actualYear = date.getFullYear();
@@ -23,16 +22,13 @@ const [child, setChild] = useState(null);
     }
     getData();
   }, [id])
-//Vamos guardando los valoes sonforme vamos ecribiendo 
+//Vamos guardando los valoes conforme escribimos
   const handleChange = (e) => {
     setChild(prev => { 
       return {
         ...prev,        
-        [e.target.name]: e.target.value
-       
+        [e.target.name]: e.target.value       
       }
-   
-
     })  
   }
   const handleSubmit = async (e) => {
@@ -52,7 +48,7 @@ const [child, setChild] = useState(null);
       {child && (
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
-          <input type="number"  min="1980" max={actualYear} name="yearOfBirth" placeholder="1920" value={child.yearOfBirth} onChange={handleChange} />
+          <input type="number"  min="1980" max={actualYear} name="yearOfBirth" placeholder="2015" value={child.yearOfBirth} onChange={handleChange} />
           <button type="submit">Save changes</button>
         </form>
       )}

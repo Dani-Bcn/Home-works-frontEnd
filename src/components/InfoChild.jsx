@@ -3,7 +3,6 @@
   import { useParams, useNavigate, NavLink } from 'react-router-dom';
 
   export default function InfoChild() {
-
   const navigate = useNavigate() 
   const {id} = useParams() 
   const date = new Date();  
@@ -11,20 +10,19 @@
   console.log(actualYear)
   const params = useParams(); //then use with params.id
   const [child, setChild] = useState(null);
-
+//Find child  by id
   useEffect(() => {
     const getData = async () => {
       try {      
         const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);               
-         setChild(getChild.data.data) 
-        console.log(child)        
+         setChild(getChild.data.data)              
       } catch (error) { 
         console.error(error); 
       } 
     } 
     getData();
   }, []);  
-  //Eliminar niñ@
+  //Delete child by id
   const handleDelete=()=>{
     const getData = async () => {
       try {      
@@ -36,8 +34,8 @@
     } 
   getData();      
   }
+  //Edit child by id
   const handleEdit=(()=>{
-    console.log("Hola")
      const getData = async () => {
       try {      
         await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`);               
@@ -56,9 +54,10 @@
              <img width={100} src={child.imageUrl}/>   
             {child.tasks.map(e=>{
               return( 
-                <div>
-                    <h1 key={e._id}>{e.name}</h1>
-                    <img width={100} src={e.imageUrl} alt="img task"/>                   
+                <div key={e._id}>
+                    <h1 >{e.name}</h1>
+                    <img width={100} src={e.imageUrl} alt="img task"/>  
+                    <h3> Points : {e.points}</h3>                 
                 </div>                          
               )                
             })}   
@@ -68,9 +67,10 @@
         <NavLink to={`/EditChild/${id}`}>
           <button >Edit child</button>
         </NavLink>           
-          <NavLink to="/ListTasks">
+          <NavLink to={`/ListTasks/${id}`}>
             <button>Add tasks</button>
           </NavLink>
+          <button>Delete tasks</button>
           <button  onClick={()=>handleDelete()}>Delete child</button>
     </div>   
   )
