@@ -47,9 +47,9 @@ const [child, setChild] = useState(null);
       {child && (
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
-          <input type="number"  min="1980" max={actualYear} name="yearOfBirth" placeholder="2015" value={child.yearOfBirth} onChange={handleChange} />
-          <input type="number"  min="0"  name="points" placeholder="2015" value={child.points} onChange={handleChange} />
-          <input type="number"  min="0"  name="cups" placeholder="0" value={child.cups} onChange={handleChange} />
+          <input type="number"  min={1980} max={actualYear} name="yearOfBirth" placeholder="2015" value={child.yearOfBirth} onChange={handleChange} />
+          <input type="number"  placeholder="Points" min={0}  name="points" value={child.points} onChange={handleChange} />
+          <input type="number"  min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />
           <button type="submit">Save changes</button>
         </form>
       )}

@@ -32,9 +32,9 @@ export default function Home() {
       <h1>Homework for kids</h1>    
    {isLoggedIn && (
 <div className='containerSection'> 
-  <h2>Children's section</h2>
-  {console.log(childs, isChilds)}
-  {isChilds && (
+ {isChilds && (
+  <div>
+     <h2>Children's section</h2> 
         <div > 
           <p>What tasks do I have for today?</p>
      
@@ -47,6 +47,8 @@ export default function Home() {
               </NavLink>                    
             ))}              
         </div>        
+  </div>
+ 
         )}
       {!childs && <p>Childs not found</p>}
     </div>

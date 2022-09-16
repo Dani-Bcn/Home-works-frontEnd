@@ -65,9 +65,7 @@ export default function AddChild() {
         <input type="number" min="1980"  max={actualYear} name="yearOfBirth" placeholder="YearOfBirth" value={child.yearOfBirth} onChange={handleChange} />      
         <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
         <input type="number" min="0"  max={actualYear} name="points" placeholder="Points" value={child.points} onChange={handleChange} />      
-        <input type="number" min="0"  max={actualYear} name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />      
-      
-        <button onClick={()=>navigate("/ListTasks")}>Add tasks</button>
+        <input type="number" min="0"  max={actualYear} name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />
         <button type="submit">Save</button>   
       </form>
     </div>

@@ -11,7 +11,7 @@ import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 import ListTasks from './components/ListTasks';
 import ListChilds from './components/ListChilds';
-import User  from './components/User'
+import User from './components/User'
 import InfoChild from './components/InfoChild'
 import AddChild from './components/AddChild'
 import EditChild from './components/EditChild'

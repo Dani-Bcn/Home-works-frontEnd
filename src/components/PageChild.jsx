@@ -5,16 +5,12 @@ import { useParams, useNavigate, NavLink } from 'react-router-dom';
 export default function PageChild() {
 const navigate = useNavigate() 
 const {id} = useParams() 
-const date = new Date();  
-const actualYear = date.getFullYear();
-console.log(actualYear)
-const params = useParams(); //then use with params.id
 const [child, setChild] = useState(null);
 const [points, setPoints] = useState(0)
+const [isTasks, setIsTasks] = useState(false)
 //Find child  by id
 const handleTaskDone = async (objectTask)=>{ 
-  console.log(objectTask._id)
- 
+  console.log(objectTask._id) 
   try{   
       await axios.put(`${process.env.REACT_APP_API_URL}/child/addPoints/${id}/${objectTask._id}`)  
         setPoints(!points)        
@@ -43,8 +39,7 @@ const handleDelete=()=>{
     } catch (error) { 
       console.error(error); 
     } 
-  } 
-getData();      
+  }     
 }
 //Edit child by id
 
@@ -57,15 +52,13 @@ const handleEdit=(()=>{
       console.error(error); 
     } 
   }   
-}) 
-  
+})    
 return (
   <div>      
       {child && (
-        <div>    
-          <h2>Your homework </h2> 
-           <h1 >{child.name}</h1>
-           <h6> Age {actualYear - child.yearOfBirth}</h6>   
+        <div>      
+          <h2>These are my tasks for today</h2>        
+           <h1 >{child.name}</h1> 
            <img width={100} src={child.imageUrl}/> 
            <h3> Points : {child.points}</h3>
           <h3> Cups : {child.cups}</h3>
