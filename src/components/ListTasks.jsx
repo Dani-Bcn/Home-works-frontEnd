@@ -38,7 +38,7 @@ useEffect(()=>{
   if(noRepaeatTasks.includes(e)){         
     }else{  
      try{   
-        const response = await axios.put(`${process.env.REACT_APP_API_URL}/child/addTask/${id}/${e}`)      
+        await axios.put(`${process.env.REACT_APP_API_URL}/child/addTask/${id}/${e}`)      
         noRepaeatTasks.push(e)
     }catch(error){
       console.log(error)

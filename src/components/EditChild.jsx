@@ -34,7 +34,7 @@ const [child, setChild] = useState(null);
       //console.log(child)
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`, {name: child.name, yearOfBirth: child.yearOfBirth} );
+      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`, {name: child.name, yearOfBirth: child.yearOfBirth, points:child.points, cups: child.cups} );
       navigate(`/ListChilds`)
     } catch (error) {
       console.error(error);
@@ -48,6 +48,8 @@ const [child, setChild] = useState(null);
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
           <input type="number"  min="1980" max={actualYear} name="yearOfBirth" placeholder="2015" value={child.yearOfBirth} onChange={handleChange} />
+          <input type="number"  min="0"  name="points" placeholder="2015" value={child.points} onChange={handleChange} />
+          <input type="number"  min="0"  name="cups" placeholder="0" value={child.cups} onChange={handleChange} />
           <button type="submit">Save changes</button>
         </form>
       )}

@@ -14,7 +14,8 @@
   useEffect(() => {
     const getData = async () => {
       try {      
-        const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);               
+        const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);   
+        console.log(getChild.data.data)                    
          setChild(getChild.data.data)              
       } catch (error) { 
         console.error(error); 
@@ -50,17 +51,18 @@
         {child && (
           <div>      
              <h1 >{child.name}</h1>
-             <h6> Age {actualYear - child.yearOfBirth}</h6>   
+             <h3> Age {actualYear - child.yearOfBirth}</h3>   
              <img width={100} src={child.imageUrl}/>   
             {child.tasks.map(e=>{
               return( 
-                <div key={e._id}>
+                <div key={e._id}>                
                     <h1 >{e.name}</h1>
-                    <img width={100} src={e.imageUrl} alt="img task"/>  
-                    <h3> Points : {e.points}</h3>                 
-                </div>                          
+                    <img width={100} src={e.imageUrl} alt="img_task"/>                                   
+                </div>                                       
               )                
-            })}   
+            })}  
+                <h3> Points : {child.points}</h3>    
+                <h3> Cups : {child.cups}</h3>  
           </div>
         )}      
         {!child && <p>child not found</p>}

@@ -10,7 +10,18 @@ const actualYear = date.getFullYear();
 console.log(actualYear)
 const params = useParams(); //then use with params.id
 const [child, setChild] = useState(null);
+const [points, setPoints] = useState(0)
 //Find child  by id
+const handleTaskDone = async (objectTask)=>{ 
+  console.log(objectTask._id)
+ 
+  try{   
+      await axios.put(`${process.env.REACT_APP_API_URL}/child/addPoints/${id}/${objectTask._id}`)  
+        setPoints(!points)        
+  }catch(error){
+    console.log(error)
+  }    
+} 
 useEffect(() => {
   const getData = async () => {
     try {      
@@ -22,7 +33,7 @@ useEffect(() => {
     } 
   } 
   getData();
-}, []);  
+}, [points]);  
 //Delete child by id
 const handleDelete=()=>{
   const getData = async () => {
@@ -36,6 +47,7 @@ const handleDelete=()=>{
 getData();      
 }
 //Edit child by id
+
 const handleEdit=(()=>{
    const getData = async () => {
     try {      
@@ -45,7 +57,8 @@ const handleEdit=(()=>{
       console.error(error); 
     } 
   }   
-})    
+}) 
+  
 return (
   <div>      
       {child && (
@@ -54,17 +67,17 @@ return (
            <h1 >{child.name}</h1>
            <h6> Age {actualYear - child.yearOfBirth}</h6>   
            <img width={100} src={child.imageUrl}/> 
-        {console.log()}
+           <h3> Points : {child.points}</h3>
+          <h3> Cups : {child.cups}</h3>
           {child.tasks.map(e=>{
-            return( 
-              <div key={e._id}>
+            return(            
+              <div key={e._id} onClick={()=>handleTaskDone(e)}>
                   <h1 >{e.name}</h1>
-                  <img width={100} src={e.imageUrl} alt="img task"/>  
-                  <h3> Points : {e.points}</h3>                 
-              </div>                          
+                  <img width={100} src={e.imageUrl} alt="img task"/>              
+                  <h3> Points : {e.points}</h3>                                 
+              </div>                           
             )                
-          })}   
-
+          })}
         </div>
       )}      
       {!child && <p>child not found</p>}

@@ -13,7 +13,9 @@ export default function AddChild() {
     name: '',  
     yearOfBirth:'',
     imageUrl:'',
-    tasks:[]
+    tasks:[],
+    points:'',
+    cups:''
   })
   // In case of multiple file upload:
   // const [imageUrls, setImageUrls] = useState([]);
@@ -49,7 +51,7 @@ export default function AddChild() {
   const handleSubmit = async (e) => {  
     e.preventDefault();
     try {
-        await axios.post(`${process.env.REACT_APP_API_URL}/child`, { name: child.name, yearOfBirth: child.yearOfBirth ,  tasks:child.tasks, imageUrl:child.imageUrl}, { headers: { Authorization: `Bearer ${storedToken}` } });           
+        await axios.post(`${process.env.REACT_APP_API_URL}/child`, { name: child.name, yearOfBirth: child.yearOfBirth ,  tasks:child.tasks, imageUrl:child.imageUrl, points: child.points, cups: child.cups}, { headers: { Authorization: `Bearer ${storedToken}` } });           
         toast.success('Project created successfully')
         navigate("/ListChilds")
     } catch (error) {
@@ -62,6 +64,9 @@ export default function AddChild() {
         <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
         <input type="number" min="1980"  max={actualYear} name="yearOfBirth" placeholder="YearOfBirth" value={child.yearOfBirth} onChange={handleChange} />      
         <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
+        <input type="number" min="0"  max={actualYear} name="points" placeholder="Points" value={child.points} onChange={handleChange} />      
+        <input type="number" min="0"  max={actualYear} name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />      
+      
         <button onClick={()=>navigate("/ListTasks")}>Add tasks</button>
         <button type="submit">Save</button>   
       </form>
