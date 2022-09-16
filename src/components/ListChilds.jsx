@@ -29,7 +29,7 @@ export default function ListChilds() {
               
                <div key={ele._id} >                  
                   <NavLink to={`/InfoChild/${ele._id}`}>
-                    <h3   >{ele.name}</h3>
+                    <h3> See {ele.name}</h3>
                     <img  src={ele.imageUrl} width="100" alt="" />    
                   </NavLink>           
                </div>

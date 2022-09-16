@@ -20,8 +20,7 @@ export default function AddChild() {
   // In case of multiple file upload:
   // const [imageUrls, setImageUrls] = useState([]);
   // const [imgForUser, setImgForUser] = useState([]);  
-  const handleChange = (e) => {
- 
+  const handleChange = (e) => { 
     setChild(prev => {
       return {
         ...prev,

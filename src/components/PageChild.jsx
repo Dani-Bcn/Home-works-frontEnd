@@ -71,6 +71,7 @@ return (
               </div>                           
             )                
           })}
+          <NavLink to='/'><button>Done</button></NavLink>
         </div>
       )}      
       {!child && <p>child not found</p>}

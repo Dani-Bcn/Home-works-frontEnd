@@ -1,5 +1,6 @@
   import React, { useEffect, useState } from 'react';
   import axios from 'axios';
+  import Swal from 'sweetalert2';
   import { useParams, useNavigate, NavLink } from 'react-router-dom';
 
   export default function InfoChild() {
@@ -23,8 +24,20 @@
     } 
     getData();
   }, []);  
+  const handleConfirm=()=>{
+    Swal.fire({
+      title: 'Are you sure to delete child?',
+      showDenyButton: true,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+       handleDelete()
+      } 
+    })
+  }  
   //Delete child by id
   const handleDelete=()=>{
+  
     const getData = async () => {
       try {      
         await axios.delete(`${process.env.REACT_APP_API_URL}/child/${id}`);               
@@ -73,7 +86,7 @@
             <button>Add tasks</button>
           </NavLink>
           <NavLink to={`/DeleteTasksChild/${id}`}><button>Delete tasks</button></NavLink>
-          <button  onClick={()=>handleDelete()}>Delete child</button>
+          <button  onClick={()=>handleConfirm()}>Delete child</button>
     </div>   
   )
 } 

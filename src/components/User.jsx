@@ -18,13 +18,11 @@ export default function Count() {
     }
     getData();
   }, []);
-  
-   return (
+  return (
     <div>     
       <p>Count</p>
       {count && (
         <div>    
-          {console.log(count)}  
             <h6 > Name  {count.username}</h6>
             <h6 > Email {count.email}</h6>
             <h6 > Password ******** </h6>
@@ -33,5 +31,5 @@ export default function Count() {
         )}
       {!count && <p>count not found</p>}
      </div>
- )
+  )
 }

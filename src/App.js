@@ -1,7 +1,9 @@
 import './App.css';
+
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './views/Home';
+import SectionChilds from './components/Sectionchilds';
 import PageChild from './components/PageChild';
 import Navbar from './components/Navbar';
 import ErrorPage from './views/ErrorPage';
@@ -24,6 +26,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/SectionChilds" element={<SectionChilds />} />
         <Route path="/PageChild/:id" element={<PageChild />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
