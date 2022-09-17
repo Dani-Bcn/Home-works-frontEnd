@@ -27,9 +27,9 @@ export default function ListChilds() {
         <div> 
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.
               
-               <div key={ele._id} >                  
+               <div key={ele._id} className="cardChild">                  
                   <NavLink to={`/InfoChild/${ele._id}`}>
-                    <h3> See {ele.name}</h3>
+                    <span><h3> Info {ele.name}</h3></span>
                     <img  src={ele.imageUrl} width="100" alt="" />    
                   </NavLink>           
                </div>
