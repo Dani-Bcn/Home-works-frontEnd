@@ -28,6 +28,8 @@ return (
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds">Childs</NavLink></li>}
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Tasks">Task</NavLink></li>}
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/User"><h3>{user.username} 👤 </h3></NavLink></li>}
+      
+
         {/* {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/private">Private view</NavLink></li>} */}
         {isLoggedIn && <li><NavLink to="/"><button onClick={() => handleLogOutUser()}>Log out</button></NavLink></li>}
         <li><button onClick={() => navigate(-1)}>Go back</button></li>

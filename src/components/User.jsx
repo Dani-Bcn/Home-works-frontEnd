@@ -1,8 +1,11 @@
 /* eslint-disable array-callback-return */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
+import { AuthContext } from '../context/AuthContext';
+
 export default function Count() {
+const { user } = useContext(AuthContext)
   
   const [count, setCount] = useState([]);
 
@@ -23,9 +26,8 @@ export default function Count() {
       <p>Count</p>
       {count && (
         <div>    
-            <h6 > Name  {count.username}</h6>
-            <h6 > Email {count.email}</h6>
-            <h6 > Password ******** </h6>
+            <h6 > Name  {user.username}</h6>
+            <h6 > Email {user.email}</h6>
             <button>Edit</button>         
         </div>
         )}

@@ -59,6 +59,22 @@
       } 
     }   
   })    
+  const resetPoints=()=>{
+      const getData = async () => {
+        try {      
+          const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);   
+                           
+           setChild(getChild.data.data)   
+                  console.log(child.points)  
+                 
+        } catch (error) { 
+          console.error(error); 
+        } 
+      } 
+      getData();
+  
+
+  }
   return (
     <div>      
         {child && (
@@ -83,10 +99,12 @@
         <NavLink to={`/EditChild/${id}`}>
           <button >Edit child</button>
         </NavLink>           
+        
           <NavLink to={`/ListTasks/${id}`}>
             <button>Add tasks</button>
           </NavLink>
           <NavLink to={`/DeleteTasksChild/${id}`}><button>Delete tasks</button></NavLink>
+          <button onClick={()=>resetPoints()}>Reset Points</button>
           <button  onClick={()=>handleConfirm()}>Delete child</button>
     </div>   
   )
