@@ -65,7 +65,10 @@
           <div>      
              <h1 >{child.name}</h1>
              <h3> Age {actualYear - child.yearOfBirth}</h3>   
-             <img width={100} src={child.imageUrl}/>   
+             <br />
+             <img width={100} src={child.imageUrl}/> 
+             <h3> Points : {child.points}</h3>    
+             <h3> Cups : {child.cups}</h3>    
             {child.tasks.map(e=>{
               return( 
                 <div key={e._id}>                
@@ -73,9 +76,7 @@
                     <img width={100} src={e.imageUrl} alt="img_task"/>                                   
                 </div>                                       
               )                
-            })}  
-                <h3> Points : {child.points}</h3>    
-                <h3> Cups : {child.cups}</h3>  
+            })}                 
           </div>
         )}      
         {!child && <p>child not found</p>}

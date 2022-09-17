@@ -1,58 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { findAllByTestId } from '@testing-library/react';
 
 export default function PageChild() {
 const navigate = useNavigate() 
+
+
 const {id} = useParams() 
 const [child, setChild] = useState(null);
 const [points, setPoints] = useState(0)
-const [isTasks, setIsTasks] = useState(false)
+const textCongratulations =
+[
+  "Congratulations, you have achieved 30 more points",
+  "Congratulations, keep it up !!",
+  "Today you are doing well!!!",
+  "Well done !!!",
+  "You are doing great!!!",
+  "You're the best!!!",
+  "Mom will be very fifty with you!!!",
+]
+
+const random = Math.floor(Math.random() * textCongratulations.length)
 //Find child  by id
 const handleTaskDone = async (objectTask)=>{ 
-  console.log(objectTask._id) 
-  try{   
-      await axios.put(`${process.env.REACT_APP_API_URL}/child/addPoints/${id}/${objectTask._id}`)  
-        setPoints(!points)        
+  Swal.fire({
+    icon: 'success',
+    title: textCongratulations[random],
+    showConfirmButton: false,
+    timer: 1000
+  })
+  // console.log(objectTask._id) 
+  try{  
+    console.log(objectTask._id)  
+      await axios.put(`${process.env.REACT_APP_API_URL}/child/addPoints/${id}/${objectTask._id}`)       
+      setPoints(!points)        
   }catch(error){
     console.log(error)
   }    
 } 
+
 useEffect(() => {
   const getData = async () => {
     try {      
-      const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);               
-       setChild(getChild.data.data) 
-      console.log(child)        
+      const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);  
+      console.log(child)                   
+       setChild(getChild.data.data)       
     } catch (error) { 
       console.error(error); 
     } 
   } 
   getData();
-}, [points]);  
-//Delete child by id
-const handleDelete=()=>{
-  const getData = async () => {
-    try {      
-      await axios.delete(`${process.env.REACT_APP_API_URL}/child/${id}`);               
-     navigate("/ListChilds")
-    } catch (error) { 
-      console.error(error); 
-    } 
-  }     
-}
-//Edit child by id
-
-const handleEdit=(()=>{
-   const getData = async () => {
-    try {      
-      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`);               
-     navigate("/EditChild")
-    } catch (error) { 
-      console.error(error); 
-    } 
-  }   
-})    
+}, [points]); 
+   
 return (
   <div>      
       {child && (
