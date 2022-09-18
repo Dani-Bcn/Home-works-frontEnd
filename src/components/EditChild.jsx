@@ -34,7 +34,7 @@ const [child, setChild] = useState(null);
       //console.log(child)
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`, {name: child.name, yearOfBirth: child.yearOfBirth, points:child.points, cups: child.cups} );
+      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`, {name: child.name, yearOfBirth: child.yearOfBirth, points: child.points, cups: child.cups, pointsCup: child.pointsCup} );
       navigate(`/ListChilds`)
     } catch (error) {
       console.error(error);

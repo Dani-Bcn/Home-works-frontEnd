@@ -23,7 +23,7 @@ const textCongratulations =
 ]
 
 const random = Math.floor(Math.random() * textCongratulations.length)
-//Find child  by id
+
 const handleTaskDone = async (objectTask)=>{ 
   Swal.fire({
     icon: 'success',
@@ -63,6 +63,7 @@ return (
            <img width={100} src={child.imageUrl}/> 
            <h3> Points : {child.points}</h3>
           <h3> Cups : {child.cups}</h3>
+          <h3>Points cups : {child.pointsCup}</h3>
           {child.tasks.map(e=>{
             return(            
               <div key={e._id} onClick={()=>handleTaskDone(e)}>

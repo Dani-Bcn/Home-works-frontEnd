@@ -5,10 +5,10 @@ import axios from 'axios';
 import { NavLink ,useNavigate} from 'react-router-dom';
 
 export default function ListChilds() {
-  const storedToken = localStorage.getItem('authToken');
-  const navigate = useNavigate()
-  // const params = useParams(); then use with params.id
-  const [childs, setChilds] = useState([]);
+const storedToken = localStorage.getItem('authToken');
+const navigate = useNavigate()
+// const params = useParams(); then use with params.id
+const [childs, setChilds] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -17,16 +17,15 @@ export default function ListChilds() {
       } catch (error) {
         console.error(error);
       }
-    }
+  }
     getData();
-  }, []);
+  }, []);  
   return (
     <div>
       <p>Childs</p>
       {childs && (
         <div> 
-            {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.
-              
+            {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.              
                <div key={ele._id} className="cardChild">                  
                   <NavLink to={`/InfoChild/${ele._id}`}>
                     <span><h3> Info {ele.name}</h3></span>

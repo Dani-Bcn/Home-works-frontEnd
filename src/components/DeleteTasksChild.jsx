@@ -28,7 +28,7 @@ useEffect(() => {
         } catch (error) {
             console.error(error); 
         }
-        }
+    }
     getData();   
 }, [i]); 
 useEffect(()=>{
@@ -41,8 +41,7 @@ useEffect(()=>{
     } 
   }   
   getDataTasksChilds() 
-},[i])  
-
+},[i])
   return (
     <div>
       <h1>What tasks do you want to delete?</h1>     

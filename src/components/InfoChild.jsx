@@ -11,6 +11,7 @@
   console.log(actualYear)
   const params = useParams(); //then use with params.id
   const [child, setChild] = useState(null);
+  let i =false
 //Find child  by id
   useEffect(() => {
     const getData = async () => {
@@ -23,7 +24,7 @@
       } 
     } 
     getData();
-  }, []);  
+  }, [i]);  
   const handleConfirm=()=>{
     Swal.fire({
       title: 'Are you sure to delete child?',
@@ -36,8 +37,7 @@
     })
   }  
   //Delete child by id
-  const handleDelete=()=>{
-  
+  const handleDelete=()=>{  
     const getData = async () => {
       try {      
         await axios.delete(`${process.env.REACT_APP_API_URL}/child/${id}`);               
@@ -47,65 +47,52 @@
       } 
     } 
   getData();      
-  }
-  //Edit child by id
-  const handleEdit=(()=>{
-     const getData = async () => {
-      try {      
-        await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`);               
-       navigate("/EditChild")
-      } catch (error) { 
-        console.error(error); 
-      } 
-    }   
-  })    
+  }     
   const resetPoints=()=>{
-      const getData = async () => {
-        try {      
-          const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);   
-                           
-           setChild(getChild.data.data)   
-                  console.log(child.points)  
-                 
-        } catch (error) { 
+    
+    const getData = async () => {
+      try {      
+        const getChild = await axios.put(`${process.env.REACT_APP_API_URL}/child/resetPoints/${id}`);                           
+        setChild(getChild.data.data) 
+        i=!i  
+             
+      } catch (error) { 
           console.error(error); 
-        } 
       } 
-      getData();
-  
-
+    } 
+    getData();
   }
   return (
     <div>      
-        {child && (
-          <div>      
-             <h1 >{child.name}</h1>
-             <h3> Age {actualYear - child.yearOfBirth}</h3>   
-             <br />
-             <img width={100} src={child.imageUrl}/> 
-             <h3> Points : {child.points}</h3>    
-             <h3> Cups : {child.cups}</h3>    
-            {child.tasks.map(e=>{
-              return( 
-                <div key={e._id}>                
-                    <h1 >{e.name}</h1>
-                    <img width={100} src={e.imageUrl} alt="img_task"/>                                   
-                </div>                                       
-              )                
-            })}                 
-          </div>
-        )}      
-        {!child && <p>child not found</p>}
+      {child && (
+        <div>      
+          <h1 >{child.name}</h1>
+          <h3> Age {actualYear - child.yearOfBirth}</h3>   
+          <br />
+          <img width={100} src={child.imageUrl}/> 
+          <h3> Points : {child.points}</h3>    
+          <h3> Cups : {child.cups}</h3>  
+          <h3> Points cups : {child.pointsCup}</h3>  
+          {child.tasks.map(e=>{
+            return( 
+              <div key={e._id}>                
+                <h1 >{e.name}</h1>
+                <img width={100} src={e.imageUrl} alt="img_task"/>                                   
+              </div>                                       
+            )                
+          })}                 
+        </div>
+      )}      
+      {!child && <p>child not found</p>}
         <NavLink to={`/EditChild/${id}`}>
           <button >Edit child</button>
-        </NavLink>           
-        
-          <NavLink to={`/ListTasks/${id}`}>
-            <button>Add tasks</button>
-          </NavLink>
-          <NavLink to={`/DeleteTasksChild/${id}`}><button>Delete tasks</button></NavLink>
-          <button onClick={()=>resetPoints()}>Reset Points</button>
-          <button  onClick={()=>handleConfirm()}>Delete child</button>
+        </NavLink>         
+        <NavLink to={`/ListTasks/${id}`}>
+          <button>Add tasks</button>
+        </NavLink>
+        <NavLink to={`/DeleteTasksChild/${id}`}><button>Delete tasks</button></NavLink>
+        <button onClick={()=>resetPoints()}>Reset Points</button>
+        <button  onClick={()=>handleConfirm()}>Delete child</button>
     </div>   
   )
 } 

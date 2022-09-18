@@ -35,6 +35,7 @@ useEffect(()=>{
   } 
 getDataTasksChilds()
 },[])
+//Add chores to child
   const handleAddTask = async (e) =>{   
   if(noRepaeatTasks.includes(e)){         
     }else{  
@@ -58,9 +59,8 @@ return (
             <img src={ele.imageUrl} onClick={()=>handleAddTask(ele._id)} width="100" alt="image"/>
               <p>Points  {ele.points}</p>
               </div>             
-            ))}   
-         
-            <NavLink to="/ListChilds"><button>Save tasks</button> </NavLink>      
+            ))}            
+            <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>      
         </div>)}
       {!task && <p>Tasks not found</p>}
     </div>

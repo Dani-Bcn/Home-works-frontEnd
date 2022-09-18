@@ -3,10 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { NavLink , useParams} from 'react-router-dom';
+import { NavLink , useParams, useNavigate} from 'react-router-dom';
 
 export default function ListTasks() {
   const {id} = useParams()
+  const navigate = useNavigate()
   const [child, setChild] = useState(null)
   const [task, setTask] = useState(null); 
   const[noRepaeatTasks, setNoRepeatTasks] = useState([])
@@ -21,6 +22,17 @@ export default function ListTasks() {
     }
     getData();
   }, [])
+  const handleDelete=()=>{  
+    const getData = async () => {
+      try {      
+        await axios.delete(`${process.env.REACT_APP_API_URL}/task/${id}`);               
+       navigate("/Tasks")
+      } catch (error) { 
+        console.error(error); 
+      } 
+    } 
+  getData();      
+  }
 return (
   <div>
     <p>Tasks</p>
@@ -32,6 +44,7 @@ return (
             <img src={ele.imageUrl}/>
               <p>Points  {ele.points}</p>
                 <NavLink to={`/EditTask/${ele._id}`}><button>Edit task</button></NavLink> 
+                <button onClick={()=>handleDelete()}>Delete task</button>
               </div>             
             ))}       
                <NavLink to="/CreateTask"><button>Create task</button></NavLink>
