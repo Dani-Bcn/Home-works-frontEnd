@@ -22,7 +22,6 @@ export default function ListTasks() {
     }
     getData();
   }, []); 
-
 useEffect(()=>{
  const getDataTasksChilds = async () => {
     try {      
