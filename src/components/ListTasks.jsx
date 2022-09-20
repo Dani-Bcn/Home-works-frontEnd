@@ -42,7 +42,7 @@ getDataTasksChilds()
           await axios.put(`${process.env.REACT_APP_API_URL}/child/addTask/${id}/${e}`)  
           toast.success('Add new task !')    
           noRepaeatTasks.push(e)
-        }catch(error){
+        }catch(error){ 
       console.log(error)
     } 
   } 
