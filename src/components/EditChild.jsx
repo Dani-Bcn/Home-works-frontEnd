@@ -29,17 +29,37 @@ const [child, setChild] = useState(null);
         [e.target.name]: e.target.value       
       }
     })  
+    
   }
   const handleSubmit = async (e) => {
       //console.log(child)
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`, {name: child.name, yearOfBirth: child.yearOfBirth, points: child.points, cups: child.cups, pointsCup: child.pointsCup} );
+      await axios.put(`${process.env.REACT_APP_API_URL}/child/${id}`, {name: child.name, yearOfBirth: child.yearOfBirth, imageUrl: child.imageUrl,points: child.points, cups: child.cups, pointsCup: child.pointsCup, golaTasks: child.goalTasks, taskDone: child.taskDone} );
       navigate(`/ListChilds`)
     } catch (error) {
       console.error(error);
     }
   }
+  const handleUploadImg  = async (e) => {
+    const uploadData = new FormData();
+    uploadData.append("imageUrl", e.target.files[0]);
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/child/upload`, uploadData, );
+      // console.log(response.data.fileUrl);
+      setChild(prev => {
+        return {
+          ...prev,
+          imageUrl: response.data.fileUrl
+        }
+      })
+      // In case of multiple file upload
+      // setImageUrls(prev => [...prev, response.data.fileUrl]);
+      // setImgForUser(prev => [...prev, e.target.files[0].name]);
+    } catch (error) {
+      console.error(error);
+    }
+  }; 
   return (
     <div>
       <h1>Edit Child</h1>
@@ -48,6 +68,7 @@ const [child, setChild] = useState(null);
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
           <input type="number"  min={1980} max={actualYear} name="yearOfBirth" placeholder="2015" value={child.yearOfBirth} onChange={handleChange} />
+          <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
           <input type="number"  placeholder="Points" min={0}  name="points" value={child.points} onChange={handleChange} />
           <input type="number"  min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />
           <button type="submit">Save changes</button>

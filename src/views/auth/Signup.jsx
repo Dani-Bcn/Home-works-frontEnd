@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { motion } from "framer-motion"
 
 export default function Signup() {
   const [user, setUser] = useState({
@@ -37,19 +38,29 @@ export default function Signup() {
     }
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <motion.div className='containerSignUp'    
+    >
+      <motion.form onSubmit={handleSubmit}
+       animate={{
+        scale:[2,2],
+        y:[-500,300,0]
+      }}
+      transition={{
+        duration:[1.5]
+      }}   
+      // transition={{ repeat: Infinity, duration: 2 }}
+      >
         <label>Username</label>
-        <input required type="text" name="username" value={user.username} onChange={handleChange} />
+        <input   className='inp' required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
-        <input required type="email" name="email" value={user.email} onChange={handleChange} />
+        <input   className='inp' required type="email" name="email" value={user.email} onChange={handleChange} />
         <label>Password</label>
-        <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
+        <input  className='inp' required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
         <label>Repeat the password</label>
-        <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
+        <input  className='inp' required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Register</button>
-      </form>
-    </div>
+        <button  className='butt' type="submit">Sign up</button>
+      </motion.form>
+    </motion.div>
   )
 }

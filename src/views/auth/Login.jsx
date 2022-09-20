@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useContext } from 'react';
+import { motion } from "framer-motion"
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -29,23 +30,31 @@ export default function Login() {
       toast.success('Welcome back!')
       storeToken(response.data.authToken);
       authenticateUser();
-      navigate('/');
+      navigate('../Sectionchilds');
     } catch (error) {
       setErrorMessage(error.response.data.error)
     }
   }
-
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input required type="email" name="email" value={user.email} onChange={handleChange} />
-        <label>Password</label>
-        <input required type="password" name="password" value={user.password} onChange={handleChange} />
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Log in </button>
-        <h1>{storeToken}</h1>
-      </form>
-    </div>
+    <motion.div className='containerLogin'>  
+      <motion.form onSubmit={handleSubmit}     
+       animate={{
+        scale:[2,2],
+        y:[500,-300,0],
+        dropbox:[0,0.8]
+      }}
+      transition={{
+        duration:[1.5]
+      }}>       
+      <br />
+         <label>Email</label>
+          <input  className='inp' required type="email" name="email" value={user.email} onChange={handleChange} />
+          <label>Password</label>
+          <input  className='inp' required type="password" name="password" value={user.password} onChange={handleChange} />
+          {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+          <button className='butt'  type="submit">Log in </button>
+          <h1>{storeToken}</h1>      
+      </motion.form>
+    </motion.div>
   )
 }

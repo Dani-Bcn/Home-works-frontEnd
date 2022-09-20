@@ -49,8 +49,7 @@ getDataTasksChilds()
   } 
 }
 return (
-  <div>
-    <p>Tasks</p>
+  <div className='containerTasks'>
       {task && (
         <div> 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         

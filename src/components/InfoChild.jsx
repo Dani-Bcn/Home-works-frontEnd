@@ -11,7 +11,7 @@
   console.log(actualYear)
   const params = useParams(); //then use with params.id
   const [child, setChild] = useState(null);
-  let i =false
+  const [change, setChange] = useState(false)
 //Find child  by id
   useEffect(() => {
     const getData = async () => {
@@ -24,7 +24,7 @@
       } 
     } 
     getData();
-  }, [i]);  
+  }, [change]);  
   const handleConfirm=()=>{
     Swal.fire({
       title: 'Are you sure to delete child?',
@@ -37,42 +37,44 @@
     })
   }  
   //Delete child by id
-  const handleDelete=()=>{  
-    const getData = async () => {
+  const handleDelete= async ()=>{   
       try {      
         await axios.delete(`${process.env.REACT_APP_API_URL}/child/${id}`);               
        navigate("/ListChilds")
       } catch (error) { 
         console.error(error); 
       } 
-    } 
-  getData();      
-  }     
-  const resetPoints=()=>{
-    
-    const getData = async () => {
+    }       
+  const resetPoints = async()=>{ 
       try {      
         const getChild = await axios.put(`${process.env.REACT_APP_API_URL}/child/resetPoints/${id}`);                           
         setChild(getChild.data.data) 
-        i=!i  
-             
+        setChange(!change)
+        console.log(change)           
       } catch (error) { 
           console.error(error); 
       } 
     } 
-    getData();
-  }
+    const resetCups = async()=>{ 
+      try {      
+        const getChild = await axios.put(`${process.env.REACT_APP_API_URL}/child/resetCups/${id}`);                           
+        setChild(getChild.data.data) 
+        setChange(!change)
+        console.log(change)           
+      } catch (error) { 
+          console.error(error); 
+      } 
+    }  
   return (
     <div>      
       {child && (
-        <div>      
+        <div  className='cardSectionChild'>      
           <h1 >{child.name}</h1>
           <h3> Age {actualYear - child.yearOfBirth}</h3>   
           <br />
           <img width={100} src={child.imageUrl}/> 
           <h3> Points : {child.points}</h3>    
           <h3> Cups : {child.cups}</h3>  
-          <h3> Points cups : {child.pointsCup}</h3>  
           {child.tasks.map(e=>{
             return( 
               <div key={e._id}>                
@@ -92,7 +94,12 @@
         </NavLink>
         <NavLink to={`/DeleteTasksChild/${id}`}><button>Delete tasks</button></NavLink>
         <button onClick={()=>resetPoints()}>Reset Points</button>
-        <button  onClick={()=>handleConfirm()}>Delete child</button>
+        <button onClick={()=>resetCups()}>Reset Cups</button>
+        <button onClick={()=>handleConfirm()}>Delete child</button>
+        <NavLink to={`/PageRewards/${id}`}>
+          <button>Page rewards</button>
+        </NavLink>
+
     </div>   
   )
 } 

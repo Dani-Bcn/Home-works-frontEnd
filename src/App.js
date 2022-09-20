@@ -4,9 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './views/Home';
 import SectionChilds from './components/Sectionchilds';
+import PageRewards from './components/PageRewards';
 import Date from './components/Date';
 import PageChild from './components/PageChild';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import ErrorPage from './views/ErrorPage';
 import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
@@ -31,6 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />      
         <Route path="/SectionChilds" element={<SectionChilds />} />
+        <Route path="/PageRewards/:id" element={<PageRewards />} />
         <Route path="/Date" element={<Date/>} />
         <Route path="/PageChild/:id" element={<PageChild />} />
         <Route path="/signup" element={<Signup />} />
@@ -49,6 +52,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />  
         <Route path="DeleteTasksChild/:id" element={<DeleteTasksChild />} />     
       </Routes>
+      <Footer/>
     </div>
   );
 }

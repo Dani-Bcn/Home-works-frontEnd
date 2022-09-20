@@ -21,7 +21,7 @@ const [childs, setChilds] = useState([]);
     getData();
   }, []);  
   return (
-    <div>
+    <div  className='cardSectionChild'>
       <p>Childs</p>
       {childs && (
         <div> 

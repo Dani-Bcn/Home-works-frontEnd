@@ -5,9 +5,7 @@ import Swal from 'sweetalert2';
 import { findAllByTestId } from '@testing-library/react';
 
 export default function PageChild() {
-const navigate = useNavigate() 
-
-
+const navigate = useNavigate()
 const {id} = useParams() 
 const [child, setChild] = useState(null);
 const [points, setPoints] = useState(0)
@@ -23,7 +21,6 @@ const textCongratulations =
 ]
 
 const random = Math.floor(Math.random() * textCongratulations.length)
-
 const handleTaskDone = async (objectTask)=>{ 
   Swal.fire({
     icon: 'success',
@@ -40,7 +37,6 @@ const handleTaskDone = async (objectTask)=>{
     console.log(error)
   }    
 } 
-
 useEffect(() => {
   const getData = async () => {
     try {      
@@ -52,8 +48,7 @@ useEffect(() => {
     } 
   } 
   getData();
-}, [points]); 
-   
+}, [points]);    
 return (
   <div>      
       {child && (
@@ -63,7 +58,6 @@ return (
            <img width={100} src={child.imageUrl}/> 
            <h3> Points : {child.points}</h3>
           <h3> Cups : {child.cups}</h3>
-          <h3>Points cups : {child.pointsCup}</h3>
           {child.tasks.map(e=>{
             return(            
               <div key={e._id} onClick={()=>handleTaskDone(e)}>
@@ -73,7 +67,7 @@ return (
               </div>                           
             )                
           })}
-          <NavLink to='/'><button>Done</button></NavLink>
+          <NavLink to='/Sectionchilds'><button>Done</button></NavLink>
         </div>
       )}      
       {!child && <p>child not found</p>}

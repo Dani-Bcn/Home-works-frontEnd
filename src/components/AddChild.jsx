@@ -16,7 +16,9 @@ export default function AddChild() {
     tasks:[],
     points:0,
     pointsCup:0,
-    cups:0
+    cups:0,
+    goalTasks:0,
+    taskDone:0,
   })
   // In case of multiple file upload:
   // const [imageUrls, setImageUrls] = useState([]);
@@ -51,7 +53,7 @@ export default function AddChild() {
   const handleSubmit = async (e) => {  
     e.preventDefault();
     try {
-        await axios.post(`${process.env.REACT_APP_API_URL}/child`, { name: child.name, yearOfBirth: child.yearOfBirth ,  tasks:child.tasks, imageUrl:child.imageUrl, points: child.points, cups: child.cups, pointsCup: child.pointsCup}, { headers: { Authorization: `Bearer ${storedToken}` } });           
+        await axios.post(`${process.env.REACT_APP_API_URL}/child`, { name: child.name, yearOfBirth: child.yearOfBirth ,  tasks:child.tasks, imageUrl:child.imageUrl, points: child.points, cups: child.cups, pointsCup: child.pointsCup, goalTasks: child.goalTasks, taskDone: child.taskDone}, { headers: { Authorization: `Bearer ${storedToken}` } });           
         toast.success('Project created successfully')
         navigate("/ListChilds")
     } catch (error) {

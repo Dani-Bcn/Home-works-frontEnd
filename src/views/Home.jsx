@@ -1,10 +1,11 @@
 import React ,{useEffect,useState ,useContext}from 'react'
 import { NavLink ,useNavigate} from 'react-router-dom'
 import axios from 'axios';
-import { AuthContext } from '../context/AuthContext';
-import SectionChilds from '../components/Sectionchilds';
-export default function Home() {
 
+import { motion } from "framer-motion"
+import { AuthContext } from '../context/AuthContext';
+
+export default function Home() {
   const navigate =useNavigate
   const storedToken = localStorage.getItem('authToken');
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -17,35 +18,36 @@ export default function Home() {
     text =""
   }else{
      isChilds=false
-     text ="No child found"
-  }
-
-  useEffect(() => {
-    
+     text ="No child found"  }
+  useEffect(() => {    
     const getData = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/mine`,{ headers: { Authorization: `Bearer ${storedToken}` }});
-        setChilds(response.data.data)
-        
+        setChilds(response.data.data)        
       } catch (error) {
         console.error(error);
       }
     }
     getData();
   }, []);
-  return (
-    <div>
-        <h1> Welcome to </h1>
-          <br></br>
-        <h1>Homework for kids</h1>
-          {isChilds && (
-                <SectionChilds/> 
-                
+  return (   
+    <motion.div className='logo'
+      star 
+      animate={{
+      scale:[0,5,1.1],
+      y:[-100,300,50],
+      }}   
+      transition={{duration:3}}  
+    >    
+    <div>    
+     <h1>HomeWork<br/>for<br/>kids</h1> 
+    </div>    
+    </motion.div>   
+  )
+}     
+          {/* {isChilds && (
+                <SectionChilds/>                
           )}
           {!isChilds && (
                  <NavLink to="./AddChild"><button>Add new child</button></NavLink>
-          )}  
-
-    </div>
-  )
-}
+          )} */}

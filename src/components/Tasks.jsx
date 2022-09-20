@@ -34,10 +34,10 @@ export default function ListTasks() {
   getData();      
   }
 return (
-  <div>
+  <div className='containerTasks'>
     <p>Tasks</p>
       {task && (
-        <div> 
+        <div className='cardTasks'> 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
             <div key={ele._id} >
             <h3> {ele.name}</h3>         
@@ -47,9 +47,7 @@ return (
                 <button onClick={()=>handleDelete()}>Delete task</button>
               </div>             
             ))}       
-               <NavLink to="/CreateTask"><button>Create task</button></NavLink>
-             
-
+               <NavLink to="/CreateTask"><button>Create task</button></NavLink>             
         </div>)}
       {!task && <p>Tasks not found</p>}
     </div>
