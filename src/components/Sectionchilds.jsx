@@ -30,37 +30,35 @@ useEffect(() => {
     getData();
   }, []);
   return (
-    <div>    
+    <div >    
       {isLoggedIn && (
       <div > 
       {isChilds && (
-        <div className='cardSectionChild'>
+        <div>
           <h2>Children's section</h2> 
-        <div> 
-                  
-              {childs.map((ele)=>(
-                <div className='cardChildren'>
-                    <p>What tasks do I have for today? </p>   
-                <NavLink  key={ele._id} to={`/PageChild/${ele._id}`}>
-                  <div >                
-                  <h4>{ele.name}</h4>
-                <img src={ele.imageUrl}  alt="img_Child" />                           
+          <div>                  
+          {childs.map((ele)=>(
+            <div  className='cardChild'>
+              <h2>What tasks do I have for today? </h2>   
+              <NavLink  key={ele._id} to={`/PageChild/${ele._id}`}>
+                <div >   
+                  <img src={ele.imageUrl}  alt="img_Child" />                      
+                  <h2>{ele.name}</h2>                  
                 </div>
               </NavLink> 
-                </div>
-                                 
-            ))}              
-          </div>        
-        </div> 
-      )}      
-      {!isChilds &&(
-        <div className='cardSectionChild'>
-          <h1>We don't have children yet, let's add them</h1>
-          <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
+            </div>                                 
+          ))}              
         </div>        
-      ) }
-      </div>
-    )}
-    </div>
+      </div> 
+    )}      
+    {!isChilds &&(
+      <div >
+        <h1>We don't have children yet, let's add them</h1>
+        <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
+      </div>        
+    ) }
+  </div>
+  )}
+  </div>
   )
 }

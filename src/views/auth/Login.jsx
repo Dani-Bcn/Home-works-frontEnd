@@ -36,25 +36,16 @@ export default function Login() {
     }
   }
   return (
-    <motion.div className='containerLogin'>  
-      <motion.form onSubmit={handleSubmit}     
-       animate={{
-        scale:[2,2],
-        y:[500,-300,0],
-        dropbox:[0,0.8]
-      }}
-      transition={{
-        duration:[1.5]
-      }}>       
-      <br />
+    <div className='cardAuth'>  
+      <form onSubmit={handleSubmit}>      
          <label>Email</label>
           <input  className='inp' required type="email" name="email" value={user.email} onChange={handleChange} />
           <label>Password</label>
           <input  className='inp' required type="password" name="password" value={user.password} onChange={handleChange} />
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-          <button className='butt'  type="submit">Log in </button>
+          <button className='butt'  type="submit"><h2>Log in</h2> </button>
           <h1>{storeToken}</h1>      
-      </motion.form>
-    </motion.div>
+      </form>
+    </div>
   )
 }

@@ -21,15 +21,16 @@ const [childs, setChilds] = useState([]);
     getData();
   }, []);  
   return (
-    <div  className='cardSectionChild'>
-      <p>Childs</p>
+    <div >
+      <h1>Select child</h1>
       {childs && (
         <div> 
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.              
-               <div key={ele._id} className="cardChild">                  
-                  <NavLink to={`/InfoChild/${ele._id}`}>
-                    <span><h3> Info {ele.name}</h3></span>
-                    <img  src={ele.imageUrl} width="100" alt="" />    
+                  <div key={ele._id} className="cardChild">  
+                   <h3>Info</h3>                  
+                  <NavLink to={`/InfoChild/${ele._id}`}>                          
+                  <img  src={ele.imageUrl} width="100" alt="imgchild" />    
+                  <h1>{ele.name}</h1>  
                   </NavLink>           
                </div>
             ))}    

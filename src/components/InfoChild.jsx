@@ -66,26 +66,21 @@
       } 
     }  
   return (
-    <div>      
+    <div className='containerCardInfo'>      
       {child && (
-        <div  className='cardSectionChild'>      
-          <h1 >{child.name}</h1>
-          <h3> Age {actualYear - child.yearOfBirth}</h3>   
-          <br />
+        <div  className='cardInfo'>           
           <img width={100} src={child.imageUrl}/> 
-          <h3> Points : {child.points}</h3>    
-          <h3> Cups : {child.cups}</h3>  
-          {child.tasks.map(e=>{
-            return( 
-              <div key={e._id}>                
-                <h1 >{e.name}</h1>
-                <img width={100} src={e.imageUrl} alt="img_task"/>                                   
-              </div>                                       
-            )                
-          })}                 
+          <h1 >{child.name}</h1>
+          <rh/>
+          <h2> Age {actualYear - child.yearOfBirth}</h2>             
+          <rh/>
+          <h2> Points : {child.points}</h2>    
+          <rh/>
+          <h2> Cups : {child.cups}</h2>      
         </div>
-      )}      
-      {!child && <p>child not found</p>}
+      )}   
+      <div className='cardInfo'>
+         {!child && <p>child not found</p>}
         <NavLink to={`/EditChild/${id}`}>
           <button >Edit child</button>
         </NavLink>         
@@ -97,9 +92,9 @@
         <button onClick={()=>resetCups()}>Reset Cups</button>
         <button onClick={()=>handleConfirm()}>Delete child</button>
         <NavLink to={`/PageRewards/${id}`}>
-          <button>Page rewards</button>
+          <button>Rewards</button>
         </NavLink>
-
+      </div>   
     </div>   
   )
 } 
