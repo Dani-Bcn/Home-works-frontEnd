@@ -28,13 +28,11 @@ return (
     }}
     >    
       <ul>
-      {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="./Sectionchilds">Home</NavLink></li>}   
-        {!isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/signup">Sign up</NavLink></li>}
-        {!isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/login">Login</NavLink></li>}
-        {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds">Childs</NavLink></li>}
-        {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Tasks">Task</NavLink></li>} 
-          
-        
+        {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="./Sectionchilds"><h3>Home</h3></NavLink></li>}   
+        {!isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/signup"><h3>Sign up</h3></NavLink></li>}
+        {!isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/login"><h3>Login</h3></NavLink></li>}
+        {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds"><h3>Childs</h3></NavLink></li>}
+        {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Tasks"><h3>Task</h3></NavLink></li>}                  
       </ul>
     </motion.div>
   )

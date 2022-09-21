@@ -38,18 +38,8 @@ export default function Signup() {
     }
   }
   return (
-    <motion.div className='containerSignUp'    
-    >
-      <motion.form onSubmit={handleSubmit}
-       animate={{
-        scale:[2,2],
-        y:[-500,300,0]
-      }}
-      transition={{
-        duration:[1.5]
-      }}   
-      // transition={{ repeat: Infinity, duration: 2 }}
-      >
+    <div className='cardAuthSignUp'>    
+      <form onSubmit={handleSubmit}>
         <label>Username</label>
         <input   className='inp' required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
@@ -59,8 +49,8 @@ export default function Signup() {
         <label>Repeat the password</label>
         <input  className='inp' required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button  className='butt' type="submit">Sign up</button>
-      </motion.form>
-    </motion.div>
+        <button  className='butt' type="submit"><h2>Sign up</h2></button>
+      </form>
+    </div>
   )
 }

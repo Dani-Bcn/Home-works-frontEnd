@@ -30,7 +30,7 @@ export default function Home() {
       star 
       animate={{
       scale:[0,5,1.1],
-      y:[-100,300,50],
+      y:[-100,300,0],
       }}   
       transition={{duration:3}}  
     >    

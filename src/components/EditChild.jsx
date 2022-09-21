@@ -72,10 +72,9 @@ const [child, setChild] = useState(null);
           <input type="number"  min={1980} max={actualYear} name="yearOfBirth" placeholder="2015" value={child.yearOfBirth} onChange={handleChange} />
           <label>Select picture</label>
           <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
-          <label>Points</label>
-          <input type="number"  placeholder="Points" min={0}  name="points" value={child.points} onChange={handleChange} />
-          <label>Cups</label>
-          <input type="number"  min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />
+
+          
+        
           <button className='butt' type="submit">Save changes</button>
         </form>
       )}

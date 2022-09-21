@@ -19,18 +19,17 @@ export default function Footer() {
         logOutUser() 
         navigate('/')
       } 
-  })
- 
+  }) 
 }
 return (
-    <motion.div className='footer'
+    <motion.div className='nav'
         animate={{
         y:[200,-100,0], 
         transition:{delay:2 ,duration:1.5}   
         }}
     >    
     <ul>
-        <li>{isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/User">{user.username} 👤 </NavLink></li>}</li>
+        <li>{isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/User"><h3>{user.username}</h3></NavLink></li>}</li>
         <li>{isLoggedIn && <li><button onClick={() => handleLogOutUser()}>Log out</button></li>}</li>
     </ul>
     </motion.div>

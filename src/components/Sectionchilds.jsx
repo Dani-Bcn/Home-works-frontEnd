@@ -30,20 +30,20 @@ useEffect(() => {
     getData();
   }, []);
   return (
-    <div>    
+    <div >    
       {isLoggedIn && (
       <div > 
       {isChilds && (
-        <div className='cardSectionChild'>
+        <div>
           <h2>Children's section</h2> 
           <div>                  
           {childs.map((ele)=>(
-            <div className='cardChildren'>
-              <h1>What tasks do I have for today? </h1>   
+            <div  className='cardChild'>
+              <h2>What tasks do I have for today? </h2>   
               <NavLink  key={ele._id} to={`/PageChild/${ele._id}`}>
                 <div >   
                   <img src={ele.imageUrl}  alt="img_Child" />                      
-                  <h4>{ele.name}</h4>                  
+                  <h2>{ele.name}</h2>                  
                 </div>
               </NavLink> 
             </div>                                 
@@ -52,7 +52,7 @@ useEffect(() => {
       </div> 
     )}      
     {!isChilds &&(
-      <div className='cardSectionChild'>
+      <div >
         <h1>We don't have children yet, let's add them</h1>
         <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
       </div>        
