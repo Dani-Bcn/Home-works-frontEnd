@@ -66,14 +66,16 @@
       } 
     }  
   return (
-    <div>      
+    <div className='containerInfoChild'>      
       {child && (
-        <div  className='cardSectionChild'>      
-          <h1 >{child.name}</h1>
-          <h3> Age {actualYear - child.yearOfBirth}</h3>   
-          <br />
+        <div  className='cardChildrenInfo'>      
           <img width={100} src={child.imageUrl}/> 
+          <h1 >{child.name}</h1>
+          <rh/>
+          <h3> Age {actualYear - child.yearOfBirth}</h3>             
+          <rh/>
           <h3> Points : {child.points}</h3>    
+          <rh/>
           <h3> Cups : {child.cups}</h3>  
           {child.tasks.map(e=>{
             return( 
@@ -84,8 +86,9 @@
             )                
           })}                 
         </div>
-      )}      
-      {!child && <p>child not found</p>}
+      )}   
+      <div className='containerInputInfoChild'>
+         {!child && <p>child not found</p>}
         <NavLink to={`/EditChild/${id}`}>
           <button >Edit child</button>
         </NavLink>         
@@ -97,8 +100,10 @@
         <button onClick={()=>resetCups()}>Reset Cups</button>
         <button onClick={()=>handleConfirm()}>Delete child</button>
         <NavLink to={`/PageRewards/${id}`}>
-          <button>Page rewards</button>
+          <button>Rewards</button>
         </NavLink>
+      </div>   
+     
 
     </div>   
   )

@@ -50,23 +50,23 @@ useEffect(() => {
   getData();
 }, [points]);    
 return (
-  <div>      
+  <div >      
       {child && (
-        <div>      
-          <h2>These are my tasks for today</h2>        
-           <h1 >{child.name}</h1> 
-           <img width={100} src={child.imageUrl}/> 
-           <h3> Points : {child.points}</h3>
-          <h3> Cups : {child.cups}</h3>
-          {child.tasks.map(e=>{
-            return(            
-              <div key={e._id} onClick={()=>handleTaskDone(e)}>
-                  <h1 >{e.name}</h1>
-                  <img width={100} src={e.imageUrl} alt="img task"/>              
-                  <h3> Points : {e.points}</h3>                                 
-              </div>                           
-            )                
-          })}
+        <div className='cardChildren'>      
+            <h2>These are my tasks for today</h2> 
+            <img width={100} src={child.imageUrl}/>        
+            <h1 >{child.name}</h1> 
+            <h3> Points : {child.points}</h3>
+            <h3> Cups : {child.cups}</h3>
+            {child.tasks.map(e=>{
+              return(            
+                <div key={e._id} onClick={()=>handleTaskDone(e)}>
+                    <h1 >{e.name}</h1>
+                    <img width={100} src={e.imageUrl} alt="img task"/>              
+                    <h3> Points : {e.points}</h3>                                 
+                </div>                           
+              )                
+            })}
           <NavLink to='/Sectionchilds'><button>Done</button></NavLink>
         </div>
       )}      

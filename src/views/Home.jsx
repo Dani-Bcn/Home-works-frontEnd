@@ -1,14 +1,9 @@
 import React ,{useEffect,useState ,useContext}from 'react'
-import { NavLink ,useNavigate} from 'react-router-dom'
 import axios from 'axios';
-
 import { motion } from "framer-motion"
-import { AuthContext } from '../context/AuthContext';
 
 export default function Home() {
-  const navigate =useNavigate
   const storedToken = localStorage.getItem('authToken');
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   console.log()
   const [childs, setChilds] = useState("");
   let isChilds =false
@@ -45,9 +40,4 @@ export default function Home() {
     </motion.div>   
   )
 }     
-          {/* {isChilds && (
-                <SectionChilds/>                
-          )}
-          {!isChilds && (
-                 <NavLink to="./AddChild"><button>Add new child</button></NavLink>
-          )} */}
+       
