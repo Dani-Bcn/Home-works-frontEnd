@@ -53,8 +53,8 @@ return (
         <div className='containerListTasks'> 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
             <div key={ele._id} className='cardTasks' >
-            <h2> {ele.name}</h2>         
-            <img src={ele.imageUrl} onClick={()=>handleAddTask(ele._id)} width="100" alt="image"/>
+              <h2> {ele.name}</h2>         
+              <img src={ele.imageUrl} onClick={()=>handleAddTask(ele._id)} width="100" alt="image"/>
               <h2>Points  {ele.points}</h2>
               </div>             
             ))}            

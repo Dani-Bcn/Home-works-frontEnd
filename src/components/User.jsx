@@ -19,11 +19,11 @@ const [count, setCount] = useState([]);
   }, []);
   return (
     <div>     
-      <h2>Count</h2>
+      <h2>Count</h2> 
       {count && (
         <div className='cardUser'>    
-            <h2 > Name  {user.username}</h2>
-            <h2 > Email {user.email}</h2>
+            <h5> Name</h5><h2>{user.username}</h2>
+            <h5> Email</h5><h2>{user.email}</h2>
             <button>Edit</button>         
         </div>
         )}

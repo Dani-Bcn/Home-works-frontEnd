@@ -15,8 +15,8 @@ const handleUploadImg  = async (e) => {
   return (
     <div>
       <form>      
-      <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
-      <button type="submit">Save</button>   
+        <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
+        <button type="submit">Save</button>   
       </form>
     </div>
   )

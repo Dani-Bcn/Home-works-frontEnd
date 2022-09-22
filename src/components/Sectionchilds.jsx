@@ -34,9 +34,9 @@ useEffect(() => {
           <h4>Children's section</h4> 
           <div className='containerListTasks'>                  
           {child.map((ele)=>(
-            <div  className='cardChild'>
+            <div key={ele._id} className='cardChild'>
               <h3>What tasks do I have for today? </h3>   
-              <NavLink  key={ele._id} to={`/PageChild/${ele._id}`}>
+              <NavLink to={`/PageChild/${ele._id}`}>
                 <div >   
                   <img src={ele.imageUrl}  alt="img_Child" />                      
                   <h2>{ele.name}</h2>                  
