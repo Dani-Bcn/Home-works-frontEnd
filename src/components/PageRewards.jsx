@@ -17,17 +17,13 @@ const [timeLeisure, setTimeLeisure] = useState(0)
 useEffect(() => { 
     const getData = async () => {   
         try {      
-            const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);   
-                             
-             setChild(getChild.data.data) 
-            
+            const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);                             
+             setChild(getChild.data.data)             
              setTimeLeisure(parseInt(child.taskDone / child.goalTasks * 100)   )
-              if(timeLeisure ===0){
+            if(timeLeisure ===0){
                 setTimeLeisure("No tasks done")
-             console.log(timeLeisure)
-             }
-           
-              
+                console.log(timeLeisure)
+            }        
           } catch (error) {  
             console.error(error); 
           } 
@@ -35,19 +31,13 @@ useEffect(() => {
     getData();    
 }, []);     
 return (   
-    <div>  
-       
+    <div>      
         {timeLeisure && (
             <div>
                   <h1>{timeLeisure}</h1> 
             <table>          
                 <tbody>
-                    <h1>Earned leisure time today</h1> 
-                   
-                          
-                     
-  
-                   
+                    <h1>Earned leisure time today</h1>           
                     <tr>
                         <th> 0% tasks done</th>    
                         <th>+25% tasks done</th>
@@ -64,10 +54,8 @@ return (
                     </tr>
                 </tbody>            
             </table>
-            </div>
-               
+            </div>               
         )}
-
     </div>
   )
 }

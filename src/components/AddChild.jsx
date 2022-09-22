@@ -61,14 +61,18 @@ export default function AddChild() {
     }
   }  
   return ( 
-    <div>
-      <form onSubmit={handleSubmit}>      
+    <div className='cardAuth form'>
+      <form onSubmit={handleSubmit} className='cardAuth form'>      
+        <label>Name</label>
         <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
+        <label>Year of date</label>
         <input type="number" min="1980"  max={actualYear} name="yearOfBirth" placeholder="YearOfBirth" value={child.yearOfBirth} onChange={handleChange} />      
+        <label>Picture</label>
         <input type="file" onChange={(e)=>{handleUploadImg(e)}} />
+        <label>Points</label>
         <input type="number" min="0"  name="points" placeholder="Points" value={child.points} onChange={handleChange} />      
-        <input type="number" min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />
-       
+        <label>Cups</label>
+        <input type="number" min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />       
         <button type="submit">Save</button>   
       </form>
     </div>

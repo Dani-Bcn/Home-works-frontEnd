@@ -36,14 +36,14 @@ export default function Login() {
     }
   }
   return (
-    <div className='cardAuth'>  
+    <div className='cardAuth form'>  
       <form onSubmit={handleSubmit}>      
          <label>Email</label>
           <input  className='inp' required type="email" name="email" value={user.email} onChange={handleChange} />
           <label>Password</label>
           <input  className='inp' required type="password" name="password" value={user.password} onChange={handleChange} />
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-          <button className='butt'  type="submit"><h2>Log in</h2> </button>
+          <button className='butt'  type="submit"><h4>Log in</h4> </button>
           <h1>{storeToken}</h1>      
       </form>
     </div>

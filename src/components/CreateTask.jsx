@@ -54,10 +54,13 @@ export default function CreateTasks() {
     }
   }  
   return ( 
-    <div>
-      <form onSubmit={handleSubmit}>      
+    <div className='cardAuth'>
+      <form onSubmit={handleSubmit}> 
+        <label>Name</label>     
         <input type="text" name="name" placeholder="Name" value={task.name} onChange={handleChange} />
+        <label>Points</label>
         <input type="number" min="0"   name="points" placeholder="Points" value={task.points} onChange={handleChange} />      
+        <label>Pîcture</label>
         <input type="file" onChange={(e)=>{handleUploadImg(e)}} />        
         <button type="submit">Save</button>   
       </form>
