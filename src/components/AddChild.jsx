@@ -36,7 +36,7 @@ export default function AddChild() {
     uploadData.append("imageUrl", e.target.files[0]);
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/child/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` }});
-      // console.log(response.data.fileUrl);
+      console.log(response.data.fileUrl);
       setChild(prev => {
         return {
           ...prev,

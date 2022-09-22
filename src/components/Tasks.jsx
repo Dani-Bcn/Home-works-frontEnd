@@ -8,9 +8,9 @@ import DeleteTask from './DeleteTask';
 
 export default function ListTasks() {
   const {id} = useParams()
+const [refresh, setRfresh] = useState(false)
   console.log(id)
   const navigate = useNavigate()
-  const [child, setChild] = useState(null)
   const [task, setTask] = useState(null); 
   const[noRepaeatTasks, setNoRepeatTasks] = useState([])
   useEffect(() => {
@@ -23,17 +23,15 @@ export default function ListTasks() {
       }
     }
     getData();
-  }, [])
+  }, [refresh])
   const handleDelete= async(e)=>{  
-    console.log(e)
+    setRfresh(!refresh)
       try {      
-        await axios.delete(`${process.env.REACT_APP_API_URL}/task/${e}`);               
-       navigate("/Tasks")
+        await axios.delete(`${process.env.REACT_APP_API_URL}/task/${e}`);
+       toast.success('Delete task !')  
       } catch (error) { 
         console.error(error); 
-      } 
-
-   
+      }   
   }
   return (
   <div >
