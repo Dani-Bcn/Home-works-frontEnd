@@ -26,8 +26,8 @@ const [childs, setChilds] = useState("");
     isChilds=false
   }
   return (
-    <div >
-      <br />
+    <div>
+      <br/>
       <button onClick={()=>navigate("/AddChild")}>Add new child</button>  
       {childs && (
         <div className='containerListTasks'> 
@@ -44,7 +44,6 @@ const [childs, setChilds] = useState("");
         {!isChilds &&(
       <div className='marginPage'>
         <h4>We don't have children yet, let's add them</h4>
-        <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
       </div>        
     ) }
     </div>

@@ -70,12 +70,11 @@
       {child && (
         <div  className='cardInfo'>           
           <img width={100} src={child.imageUrl}/> 
-          <h1>{child.name}</h1>
-          <rh/>
+          <h6>{child.name}</h6>
           <h2> Age {actualYear - child.yearOfBirth}</h2>             
-          <rh/>
+          <hr />
           <h2> Points : {child.points}</h2>    
-          <rh/>
+          <hr />
           <h2> Cups : {child.cups}</h2>      
         </div>
       )}   
