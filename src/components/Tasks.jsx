@@ -24,9 +24,10 @@ export default function ListTasks() {
     }
     getData();
   }, [])
-  const handleDelete= async()=>{  
+  const handleDelete= async(e)=>{  
+    console.log(e)
       try {      
-        await axios.delete(`${process.env.REACT_APP_API_URL}/task/${id}`);               
+        await axios.delete(`${process.env.REACT_APP_API_URL}/task/${e}`);               
        navigate("/Tasks")
       } catch (error) { 
         console.error(error); 
@@ -45,7 +46,7 @@ export default function ListTasks() {
               <img src={ele.imageUrl}/>     
               <h2>Points  {ele.points}</h2>
                 <NavLink to={`/EditTask/${ele._id}`}><button>Edit task</button></NavLink> 
-              <button onClick={()=>handleDelete()}>Delete task</button>                   
+              <button onClick={()=>handleDelete(ele._id)}>Delete task</button>                   
             </div>             
           ))}       
         </div>)}
