@@ -1,5 +1,4 @@
 /* eslint-disable array-callback-return */
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -44,17 +43,19 @@ useEffect(()=>{
 },[i])
   return (
     <div>
-      <h1>What tasks do you want to delete?</h1>     
+      <h2>What tasks do you want to delete?</h2> 
+      <div className='containerListTasks'>
         {child && (
           child.tasks.map((e)=>{
             return (
-              <div  onClick={()=>{handleDelete(e._id)}} key={e._id}>
+              <div  className='cardTasks' onClick={()=>{handleDelete(e._id)}} key={e._id}>
                 <h3>{e.name}</h3>
                 <img src={e.imageUrl}></img>  
               </div>               
             )            
           }) 
-        )}          
+        )}    
+      </div>          
       <NavLink to="/ListChilds"><button>Done</button> </NavLink>                  
     </div>
   )

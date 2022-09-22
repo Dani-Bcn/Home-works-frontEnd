@@ -50,7 +50,7 @@ getDataTasksChilds()
 return (
   <div >
       {task && (
-        <div > 
+        <div className='containerListTasks'> 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
             <div key={ele._id} className='cardTasks' >
             <h2> {ele.name}</h2>         
@@ -58,8 +58,8 @@ return (
               <h2>Points  {ele.points}</h2>
               </div>             
             ))}            
-            <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>      
         </div>)}
+        <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>      
       {!task && <p>Tasks not found</p>}
     </div>
   )

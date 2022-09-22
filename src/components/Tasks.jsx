@@ -33,21 +33,20 @@ export default function ListTasks() {
     } 
   getData();      
   }
-return (
+  return (
   <div >
+      <NavLink to="/CreateTask"><button className='butt'>Create task</button></NavLink>             
       {task && (
-        <div > 
+        <div className='containerListTasks' > 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
             <div key={ele._id}className='cardTasks' >
-            <h3> {ele.name}</h3>    
-            <img src={ele.imageUrl}/>
-              <p>Points  {ele.points}</p>   
-              <rh/>
+              <h3> {ele.name}</h3>        
+              <img src={ele.imageUrl}/>     
+              <h2>Points  {ele.points}</h2>
                 <NavLink to={`/EditTask/${ele._id}`}><button>Edit task</button></NavLink> 
                 <button  onClick={()=>handleDelete()}>Delete task</button>            
-              </div>             
-            ))}       
-               <NavLink to="/CreateTask"><button className='butt'>Create task</button></NavLink>             
+            </div>             
+          ))}       
         </div>)}
       {!task && <p>Tasks not found</p>}
     </div>

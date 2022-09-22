@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink ,useNavigate} from 'react-router-dom';
-
 export default function ListChilds() {
 const storedToken = localStorage.getItem('authToken');
+let isChilds = false
 const navigate = useNavigate()
 // const params = useParams(); then use with params.id
-const [childs, setChilds] = useState([]);
+const [childs, setChilds] = useState("");
   useEffect(() => {
     const getData = async () => {
       try {
@@ -20,23 +20,33 @@ const [childs, setChilds] = useState([]);
   }
     getData();
   }, []);  
+  if(childs.length !== 0){
+    isChilds=true 
+  }else{
+    isChilds=false
+  }
   return (
     <div >
-      <h1>Select child</h1>
+      <br />
+      <button onClick={()=>navigate("/AddChild")}>Add new child</button>  
       {childs && (
-        <div> 
+        <div className='containerListTasks'> 
             {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.              
                   <div key={ele._id} className="cardChild">  
                    <h3>Info</h3>                  
                   <NavLink to={`/InfoChild/${ele._id}`}>                          
-                  <img  src={ele.imageUrl} width="100" alt="imgchild" />    
-                  <h1>{ele.name}</h1>  
+                    <img  src={ele.imageUrl} width="100" alt="imgchild" />    
+                    <h3>{ele.name}</h3>  
                   </NavLink>           
                </div>
-            ))}    
-           <button onClick={()=>navigate("/AddChild")}>Add new child</button>
-        </div>)}
-      {!childs && <p>Childs not found</p>}
+            ))}        
+        </div>)}      
+        {!isChilds &&(
+      <div className='marginPage'>
+        <h4>We don't have children yet, let's add them</h4>
+        <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
+      </div>        
+    ) }
     </div>
   )
 }
