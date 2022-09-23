@@ -56,7 +56,7 @@ return (
         <div>       
           <div className='cardPageChild' >         
             <img src={child.imageUrl}/>        
-            <h1 >{child.name}</h1>  
+            <h3 >{child.name}</h3>  
               <pre>Points    {child.points}</pre>
               <pre>Cups        {child.cups}</pre>                   
           </div>      

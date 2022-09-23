@@ -33,7 +33,7 @@ useEffect(() => {
         <div>
           <h4>Children's section</h4>                 
           {child.map((ele)=>(
-              <NavLink   key={ele._id} className='cardChild' to={`/PageChild/${ele._id}`}>                
+              <NavLink   key={ele._id} className='cardPageChild' to={`/PageChild/${ele._id}`}>                
                   <h3>What tasks do I have for today? </h3>
                   <img src={ele.imageUrl}  alt="img_Child" />                      
                   <h3>{ele.name}</h3>               
