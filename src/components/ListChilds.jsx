@@ -25,13 +25,13 @@ const [childs, setChilds] = useState("");
   }else{
     isChilds=false
   }
+  
   return (
-    <div>
+    <div>       
       <br/>
       <button onClick={()=>navigate("/AddChild")}>Add new child</button>  
       {childs && (
-        <div className='containerListTasks'> 
-       
+        <div className='containerListTasks'>       
             {childs.map((ele)=>(
               <NavLink key={ele._id} className="cardChildInfo"to={`/InfoChild/${ele._id}`}>                                            
                  <h5>Info</h5>

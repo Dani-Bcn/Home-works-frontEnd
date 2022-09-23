@@ -29,7 +29,7 @@ export default function Home() {
     <motion.div className='logo'
       star 
       animate={{
-      scale:[0,5,1.1],
+      scale:[0,5,2],
       y:[-100,300,0],
       }}   
       transition={{duration:3}}  

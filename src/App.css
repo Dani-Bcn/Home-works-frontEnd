@@ -6,7 +6,7 @@
 }
 html{
   width: 100vw;
-  height: 100vh;
+  height: 600px;
   background-color: rgba(255, 214, 167, 0.798);
   background-image: url(../public/img/house2.png);
   background-repeat: no-repeat;
@@ -120,7 +120,7 @@ pre{
 }
 .logo{
   width: 350px;
-  height: 520px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,7 +131,7 @@ pre{
   letter-spacing: 3px;
   text-align: center;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
 }
 .nav{
   width: 100vw;
@@ -299,7 +299,7 @@ pre{
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: rgba(229, 203, 203, 0.69);
+  background-color: rgba(255, 129, 129, 0.45);
   margin: 10px auto;
   text-align: center;border-radius: 10px;
   font-size: 15px;
@@ -358,3 +358,16 @@ pre{
   background-position: -10px;
   text-shadow: 0 0 10px rgb(28, 28, 28);
 }
+circle{
+  stroke-width: 30px;
+  fill: transparent;
+  margin: 20px;
+}
+.containerCircle{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px; 
+}
+
