@@ -31,21 +31,15 @@ useEffect(() => {
       <div > 
       {isChilds && (
         <div>
-          <h4>Children's section</h4> 
-          <div className='containerListTasks'>                  
+          <h4>Children's section</h4>                 
           {child.map((ele)=>(
-            <div key={ele._id} className='cardChild'>
-              <h3>What tasks do I have for today? </h3>   
-              <NavLink to={`/PageChild/${ele._id}`}>
-                <div >   
+              <NavLink   key={ele._id} className='cardChild' to={`/PageChild/${ele._id}`}>                
+                  <h3>What tasks do I have for today? </h3>
                   <img src={ele.imageUrl}  alt="img_Child" />                      
-                  <h2>{ele.name}</h2>                  
-                </div>
-              </NavLink> 
-            </div>                                 
-          ))}              
-          </div>        
-        </div> 
+                  <h3>{ele.name}</h3>               
+              </NavLink>                                          
+            ))}              
+          </div> 
         )}      
           {!isChilds &&(
             <div className='marginPage'>

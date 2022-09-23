@@ -54,14 +54,11 @@ return (
   <div >      
       {child && (
         <div>       
-          <div className='cardChild' >         
+          <div className='cardPageChild' >         
             <img src={child.imageUrl}/>        
-            <h1 >{child.name}</h1>            
-            <span>
-              <h3><pre>Points    {child.points}</pre> </h3>
-              <br />
-              <h3><pre>Cups        {child.cups}</pre></h3>
-            </span>             
+            <h1 >{child.name}</h1>  
+              <pre>Points    {child.points}</pre>
+              <pre>Cups        {child.cups}</pre>                   
           </div>      
           <div className='containerListTasks'>
               {child.tasks.map(e=>{
