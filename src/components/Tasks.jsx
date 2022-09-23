@@ -3,13 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { NavLink , useParams, useNavigate} from 'react-router-dom';
-import DeleteTask from './DeleteTask';
+import { NavLink , useParams, useNavigate} from 'react-router-dom'
 
 export default function ListTasks() {
   const {id} = useParams()
 const [refresh, setRfresh] = useState(false)
-  console.log(id)
   const navigate = useNavigate()
   const [task, setTask] = useState(null); 
   const[noRepaeatTasks, setNoRepeatTasks] = useState([])
@@ -25,6 +23,7 @@ const [refresh, setRfresh] = useState(false)
     getData();
   }, [refresh])
   const handleDelete= async(e)=>{  
+    console.log(e)
     setRfresh(!refresh)
       try {      
         await axios.delete(`${process.env.REACT_APP_API_URL}/task/${e}`);

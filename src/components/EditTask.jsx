@@ -39,11 +39,10 @@ export default function EditChild() {
       }
     }
     return (
-      <div className='cardAuth form'>
-        <h2>Edit task</h2>
+      <div >
         {!task && <p>Loading</p>}
         {task && (
-          <form onSubmit={handleSubmit}>
+          <form className='form' onSubmit={handleSubmit}>
             <label>Name</label>
             <input type="text" name="name" placeholder="Name" value={task.name} onChange={handleChange} />
             <label>Points</label>

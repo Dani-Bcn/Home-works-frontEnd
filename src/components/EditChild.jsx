@@ -60,11 +60,10 @@ export default function EditChild() {
       }
     }; 
     return (
-      <div className='cardAuth form'>
-        <h2>Edit Child</h2>
+      <div >
         {!child && <p>Loading</p>}
         {child && (
-          <form onSubmit={handleSubmit}className='cardAuth form'>
+          <form  className='formSignUp' onSubmit={handleSubmit}>
             <label>Name</label>
             <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />          
             <label>Year of date</label>

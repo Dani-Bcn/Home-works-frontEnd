@@ -38,8 +38,8 @@ export default function Signup() {
     }
   }
   return (
-    <div className='cardAuth'>    
-      <form onSubmit={handleSubmit}>
+ 
+      <form className='formSignUp' onSubmit={handleSubmit}>
         <label>Username</label>
         <input   className='inp' required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
@@ -49,8 +49,7 @@ export default function Signup() {
         <label>Repeat the password</label>
         <input  className='inp' required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button  className='butt' type="submit"><h4>Sign up</h4></button>
+        <button  className='butt' type="submit"><h3>Sign up</h3></button>
       </form>
-    </div>
   )
 }

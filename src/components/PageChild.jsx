@@ -55,11 +55,12 @@ return (
       {child && (
         <div>       
           <div className='cardChild' >         
-            <img width={100} src={child.imageUrl}/>        
+            <img src={child.imageUrl}/>        
             <h1 >{child.name}</h1>            
             <span>
-              <h3> Points : {child.points}</h3>
-              <h3> Cups : {child.cups}</h3>
+              <h3><pre>Points    {child.points}</pre> </h3>
+              <br />
+              <h3><pre>Cups        {child.cups}</pre></h3>
             </span>             
           </div>      
           <div className='containerListTasks'>
@@ -68,7 +69,7 @@ return (
                 <div  className='cardTasks' key={e._id} onClick={()=>handleTaskDone(e)}>
                     <h2 >{e.name}</h2>
                     <img width={100} src={e.imageUrl} alt="img task"/>              
-                    <h3> Points : {e.points}</h3>                                 
+                    <h3> Points  {e.points}</h3>                                 
                 </div>                           
               )  
                 })}         

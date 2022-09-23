@@ -61,8 +61,7 @@ export default function AddChild() {
     }
   }  
   return ( 
-    <div className='cardAuth form'>
-      <form onSubmit={handleSubmit} className='cardAuth form'>      
+      <form  className='formSignUp'onSubmit={handleSubmit}>      
         <label>Name</label>
         <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
         <label>Year of date</label>
@@ -75,6 +74,5 @@ export default function AddChild() {
         <input type="number" min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />       
         <button type="submit">Save</button>   
       </form>
-    </div>
   ) 
 }

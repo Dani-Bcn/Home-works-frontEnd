@@ -31,14 +31,13 @@ const [childs, setChilds] = useState("");
       <button onClick={()=>navigate("/AddChild")}>Add new child</button>  
       {childs && (
         <div className='containerListTasks'> 
-            {childs.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.              
-                  <div key={ele._id} className="cardChild">  
-                   <h3>Info</h3>                  
-                  <NavLink to={`/InfoChild/${ele._id}`}>                          
-                    <img  src={ele.imageUrl} width="100" alt="imgchild" />    
-                    <h3>{ele.name}</h3>  
-                  </NavLink>           
-               </div>
+       
+            {childs.map((ele)=>(
+              <NavLink key={ele._id} className="cardChildInfo"to={`/InfoChild/${ele._id}`}>                                            
+                 <h5>Info</h5>
+                <img  src={ele.imageUrl} width="100" alt="imgchild" />    
+                <h3>{ele.name}</h3>  
+              </NavLink>
             ))}        
         </div>)}      
         {!isChilds &&(

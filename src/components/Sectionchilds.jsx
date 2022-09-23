@@ -49,7 +49,7 @@ useEffect(() => {
         )}      
           {!isChilds &&(
             <div className='marginPage'>
-            <h4>We don't have children yet, let's add them</h4>
+            <h5>We don't have children yet, let's add them</h5>
             <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
           </div>        
         ) }
