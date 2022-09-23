@@ -48,21 +48,20 @@ export default function CreateTasks() {
     try {
         await axios.post(`${process.env.REACT_APP_API_URL}/task`, { name: task.name, imageUrl: task.imageUrl, points: task.points, }, { headers: { Authorization: `Bearer ${storedToken}` } });           
         toast.success('Project created successfully')
-        navigate("/ListChilds")
+        navigate("/ListTasks")
     } catch (error) {
       console.log(error);
     }
   }  
   return (   
-      <form  className='form'onSubmit={handleSubmit}> 
-        <label>Name</label>     
-        <input type="text" name="name" placeholder="Name" value={task.name} onChange={handleChange} />
-        <label>Points</label>
-        <input type="number" min="0"   name="points" placeholder="Points" value={task.points} onChange={handleChange} />      
-        <label>Pîcture</label>
-        <input type="file" onChange={(e)=>{handleUploadImg(e)}} />        
-        <button type="submit">Save</button>   
-      </form>
-    
+    <form  className='form'onSubmit={handleSubmit}> 
+      <label>Name</label>     
+      <input type="text" name="name" placeholder="Name" value={task.name} onChange={handleChange} />
+      <label>Points</label>
+      <input type="number" min="0"   name="points" placeholder="Points" value={task.points} onChange={handleChange} />      
+      <label>Pîcture</label>
+      <input type="file" onChange={(e)=>{handleUploadImg(e)}} />        
+      <button type="submit">Save</button>   
+    </form>    
   ) 
 }
