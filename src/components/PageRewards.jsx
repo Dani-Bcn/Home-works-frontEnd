@@ -18,8 +18,7 @@ const [timeLeisure, setTimeLeisure] = useState(0)
 const [numPercent, setNumPercent] = useState(0)
 let  num = 0
 useEffect(() => {  
-    const getData = async () => {       
-
+    const getData = async () => {
         try {      
             const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);                             
              setChild(getChild.data.data)        
@@ -31,11 +30,12 @@ useEffect(() => {
         }                 
           } catch (error) {    
             console.error(error);     
-          }    
+          }     
         } 
-    getData();    
+    getData();     
 }, [timeLeisure]);
-    let percent = 0.75 
+    let coco = timeLeisure
+    let percent = coco
     let delay 
     let draw = {  
         hidden: { pathLength: 0, opacity: 0 },

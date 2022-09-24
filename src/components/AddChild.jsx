@@ -64,7 +64,7 @@ export default function AddChild() {
       <form  className='formSignUp'onSubmit={handleSubmit}>      
         <label>Name</label>
         <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
-        <label>Year of date</label>
+        <label>Year of Birth</label>
         <input type="number" min="1980"  max={actualYear} name="yearOfBirth" placeholder="YearOfBirth" value={child.yearOfBirth} onChange={handleChange} />      
         <label>Picture</label>
         <input type="file" onChange={(e)=>{handleUploadImg(e)}} />

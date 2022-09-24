@@ -377,4 +377,14 @@ circle{
   justify-content: space-evenly;
   margin-top: 30px; 
 }
+.containerListTasks{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
 
