@@ -49,7 +49,8 @@ useEffect(() => {
           transition={{
             duration:1
           }}
-          >Children's section</motion.h4>                 
+          >Children's section</motion.h4> 
+           <div className='containerListTasks'>
           {child.map((ele)=>(
             <motion.div key={ele._id}
              animate={{
@@ -59,13 +60,16 @@ useEffect(() => {
                 duration:1
               }}
             >
+         
                 <NavLink  key={ele._id} className='cardPageChild' to={`/PageChild/${ele._id}`}>                
                   <h3>What tasks do I have for today? </h3>
                   <img src={ele.imageUrl}  alt="img_Child" />                      
                   <h3>{ele.name}</h3>               
               </NavLink>      
             </motion.div>                                                
-            ))}              
+            ))} 
+          </div>                    
+             
           </div> 
         )}      
           {!isChilds &&(

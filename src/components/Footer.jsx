@@ -22,7 +22,7 @@ export default function Footer() {
     }) 
   }
   return (
-    <motion.div className='nav'
+    <motion.div className='footer'
         animate={{
           y:[200,-100,0], 
           transition:{delay:2 ,duration:1.5}   

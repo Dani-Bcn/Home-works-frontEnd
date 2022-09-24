@@ -38,7 +38,7 @@ const [refresh, setRfresh] = useState(false)
       {task && (
         <div className='containerListTasks' > 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
-            <div key={ele._id}className='cardTasks' >
+            <div key={ele._id}className='cardTasksEdit' >
               <h3> {ele.name}</h3>        
               <img src={ele.imageUrl}/>     
               <h2>Points  {ele.points}</h2>
