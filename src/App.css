@@ -303,7 +303,7 @@ pre{
 }
 .cardTasks{
   width: 250px;
-  height: 250px;
+  height: 320px;
   display: flex;
   padding: 30px 0;
   flex-direction: column;
