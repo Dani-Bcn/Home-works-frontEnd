@@ -29,7 +29,7 @@ const [childs, setChilds] = useState("");
   return (
     <div>       
       <br/>
-      <button onClick={()=>navigate("/AddChild")}>Add new child</button>  
+      <button onClick={()=>navigate("/AddChild")}><h4>Add new child</h4></button>
       {childs && (
         <div className='containerListTasks'>       
             {childs.map((ele)=>(

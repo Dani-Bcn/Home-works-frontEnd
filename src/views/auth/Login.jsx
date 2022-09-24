@@ -35,16 +35,22 @@ export default function Login() {
       setErrorMessage(error.response.data.error)
     }
   }
-  return (
-
-      <form  className='form' onSubmit={handleSubmit}>      
+  return (   
+      <motion.form  className='form' onSubmit={handleSubmit} 
+      animate={{
+        opacity:[0,1],
+        y:[200,-100,0]
+      }}     
+      transition={{
+        duration:1.5,
+      }}
+      >
          <label>Email</label>
           <input  required type="email" name="email" value={user.email} onChange={handleChange} />
           <label>Password</label>
           <input  required type="password" name="password" value={user.password} onChange={handleChange} />
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
           <button type="submit"><h3>Log in</h3> </button>        
-      </form>
- 
+      </motion.form>      
   )
 }

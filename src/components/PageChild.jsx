@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { motion } from 'framer-motion'
 
 export default function PageChild() {
 const navigate = useNavigate()
@@ -9,6 +10,7 @@ const {id} = useParams()
 const [child, setChild] = useState(null);
 const [points, setPoints] = useState(0)
 const [done, setDone] = useState(true)
+const [opacity, setOpacity] = useState(1)
 const textCongratulations =
 [
   "Congratulations, you have achieved 30 more points !",
@@ -21,6 +23,7 @@ const textCongratulations =
 ]
 const random = Math.floor(Math.random() * textCongratulations.length)
 const handleTaskDone = async (objectTask)=>{ 
+  setOpacity(0)
   Swal.fire({
     icon: 'success',
     title: textCongratulations[random],
@@ -49,33 +52,50 @@ useEffect(() => {
     } 
   }  
   getData();  
-}, [points]);   
+}, [points]);  
+const playAnimation=(()=>{
+  setOpacity(0)
+      console.log(opacity)
+})
+
 return (
-  <div >      
+  <motion.div 
+  animate={{
+    y:[100,0],
+    opacity:[0,1]
+  }}
+  
+  >      
+    {console.log(opacity)} 
       {child && (
-        <div>       
-          <div className='cardPageChild' >         
-            <img src={child.imageUrl}/>        
+        <div>      
+          <motion.div className='cardPageChild'>         
+            <motion.img onClick={()=>playAnimation()} src={child.imageUrl}/>        
             <h3 >{child.name}</h3>  
               <pre>Points    {child.points}</pre>
               <pre>Cups        {child.cups}</pre>                   
-          </div>      
+          </motion.div>    
+          <h4>Tasks for today</h4>  
           <div className='containerListTasks'>
-              {child.tasks.map(e=>{
-              return(            
-                <div  className='cardTasks' key={e._id} onClick={()=>handleTaskDone(e)}>
-                    <h2 >{e.name}</h2>
-                    <img width={100} src={e.imageUrl} alt="img task"/>              
-                    <h3> Points  {e.points}</h3>                                 
-                </div>                           
-              )  
-                })}         
-          </div>              
-           
+            {child.tasks.map(e=>{
+                  return(            
+                    <motion.div  className='cardTasks' key={e._id} onClick={()=>handleTaskDone(e)}>
+                      <h2 >{e.name}</h2>
+                      <motion.img width={100} src={e.imageUrl} alt="img task"
+                          animate={{
+                            opacity:[0,1],                            
+                          }}
+                      ></motion.img>              
+                      <h3> Points  {e.points}</h3>                                 
+                    </motion.div>                           
+                  )  
+            })}         
+          </div>        
+
           <NavLink to='/Sectionchilds'><button>Done</button></NavLink>
         </div>
       )}      
       {!child && <p>child not found</p>}
-  </div>   
+  </motion.div>   
 )
 } 

@@ -9,7 +9,7 @@ export default function PageRewards() {
 const navigate = useNavigate() 
 const {id} = useParams() 
 const date = new Date();  
-const actualYear = date.getFullYear();
+const actualYear = date.getFullYear();  
 // console.log(actualYear)
 const params = useParams(); //then use with params.id
 const [child, setChild] = useState(null);
@@ -17,9 +17,9 @@ const [change, setChange] = useState(false)
 const [timeLeisure, setTimeLeisure] = useState(0)
 const [numPercent, setNumPercent] = useState(0)
 let  num = 0
-let i=true
 useEffect(() => {  
-    const getData = async () => {         
+    const getData = async () => {       
+
         try {      
             const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);                             
              setChild(getChild.data.data)        
@@ -28,21 +28,21 @@ useEffect(() => {
            }else{
                return  setTimeLeisure( child.taskDone / child.goalTasks  )
            }        
-        }                
+        }                 
           } catch (error) {    
             console.error(error);     
           }    
         } 
     getData();    
 }, [timeLeisure]);
-    let percent = 0.5 
+    let percent = 0.75 
     let delay 
     let draw = {  
         hidden: { pathLength: 0, opacity: 0 },
         visible: (i) => { 
             delay = 2 + i * 0.5; //Delay de la animación
             return {
-                pathLength:percent,
+                pathLength:percent, 
                 opacity: 1,
                 transition: {
                     pathLength: { delay, type: "spring", duration: 5, },
@@ -61,13 +61,19 @@ useEffect(() => {
     }
         },30)    
     }) 
-    setTimeout(()=>count(),2000)     
- },[i])
+    setTimeout(()=>count(),1000)      
+ },[])
  console.log("gol") 
  console.log(timeLeisure)
 return (  
-    <div >
-            <h1>let i :{numPercent}</h1>
+    <div > 
+            {timeLeisure && (                
+        <div>
+          
+             <h4>Tasks done {child.taskDone} / {child.goalTasks}
+                <br />
+                {numPercent} % </h4>
+ 
          <div className='containerCircle'>     
             <motion.svg 
                 width="75"
@@ -82,17 +88,15 @@ return (
                     r="80" 
                     stroke="#00cc88" 
                     variants={draw}
-                    custom={1}
+                    custom={1} 
                 />
             </motion.svg>
         </div>
-    {timeLeisure && (                
-        <div>
-            <h1>Today's rewards</h1>
-            <h1> Tasks done {child.taskDone} =  {child.points} Points  </h1>
-            <h1></h1>
-        </div>   
+        <h4>Today's rewards</h4>
+            <h4>  {child.points} Points  </h4>
+            </div>   
     )}   
+           
     </div>   
   )
 }

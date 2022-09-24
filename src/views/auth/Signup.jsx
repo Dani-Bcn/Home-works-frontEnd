@@ -37,9 +37,16 @@ export default function Signup() {
       setErrorMessage(error.response.data.error)
     }
   }
-  return (
- 
-      <form className='formSignUp' onSubmit={handleSubmit}>
+  return (       
+      <motion.form  className='formSignUp' onSubmit={handleSubmit} 
+      animate={{
+        opacity:[0,1],
+        y:[-200,100,0]
+      }}     
+      transition={{
+        duration:1.5,
+      }}
+      >      
         <label>Username</label>
         <input   className='inp' required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
@@ -50,6 +57,6 @@ export default function Signup() {
         <input  className='inp' required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <button  className='butt' type="submit"><h3>Sign up</h3></button>
-      </form>
+      </motion.form>
   )
 }

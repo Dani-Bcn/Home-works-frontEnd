@@ -34,7 +34,7 @@ const [refresh, setRfresh] = useState(false)
   }
   return (
   <div >
-      <NavLink to="/CreateTask"><button className='butt'>Create task</button></NavLink>             
+      <NavLink to="/CreateTask"><button className='butt'><h4>Create task</h4></button></NavLink>             
       {task && (
         <div className='containerListTasks' > 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
