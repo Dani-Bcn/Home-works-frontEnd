@@ -59,8 +59,7 @@ useEffect(() => {
               transition={{
                 duration:1
               }}
-            >
-         
+            >         
                 <NavLink  key={ele._id} className='cardPageChild' to={`/PageChild/${ele._id}`}>                
                   <h3>What tasks do I have for today? </h3>
                   <img src={ele.imageUrl}  alt="img_Child" />                      
@@ -73,10 +72,12 @@ useEffect(() => {
           </div> 
         )}      
           {!isChilds &&(
-            <div className='marginPage'>
-            <h5>We don't have children yet, let's add them</h5>
-            <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>
-          </div>        
+    
+              <div className='marginPage'>
+            <h4>We don't have children yet, let's add them</h4>          
+       
+            <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>      
+            </div>  
         ) }
       </div>
     )}

@@ -28,10 +28,10 @@ return (
     }}
     >    
       <div>
-        {isLoggedIn &&<NavLink className={(element) => element.isActive ? 'selected' : ''} to="./Sectionchilds"><h3>Home</h3></NavLink>}   
+        {isLoggedIn &&<NavLink className={(element) => element.isActive ? 'selected' : ''} to="./Sectionchilds"><h3>Kids</h3></NavLink>}   
         {!isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/signup"><h3>Sign up</h3></NavLink>}
         {!isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/login"><h3>Login</h3></NavLink>}
-        {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds"><h3>Childs</h3></NavLink>}
+        {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds"><h3>Parents</h3></NavLink>}
         {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Tasks"><h3>Task</h3></NavLink>}  
       </div>
                        

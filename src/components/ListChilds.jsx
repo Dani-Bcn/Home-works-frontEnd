@@ -24,12 +24,17 @@ const [childs, setChilds] = useState("");
     isChilds=true 
   }else{
     isChilds=false
-  }
-  
+  }  
   return (
-    <div>       
-      <br/>
-      <button onClick={()=>navigate("/AddChild")}><h4>Add new child</h4></button>
+    <div>    
+    {!isChilds &&(
+      <div className='marginPage'>
+        <h4>We don't have children yet, let's add them</h4>
+        <button onClick={()=>navigate("/AddChild")}><h4>Add new child</h4></button>
+      </div>        
+    ) }   
+
+    
       {childs && (
         <div className='containerListTasks'>       
             {childs.map((ele)=>(
@@ -39,12 +44,7 @@ const [childs, setChilds] = useState("");
                 <h3>{ele.name}</h3>  
               </NavLink>
             ))}        
-        </div>)}      
-        {!isChilds &&(
-      <div className='marginPage'>
-        <h4>We don't have children yet, let's add them</h4>
-      </div>        
-    ) }
+        </div>)}       
     </div>
   )
 }

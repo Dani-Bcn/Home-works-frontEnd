@@ -375,11 +375,11 @@ pre{
 }
 .marginPage{
   width: 300px;
-  height: 518px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 110px auto;
 }
 .cardUser{
   width: 350px;

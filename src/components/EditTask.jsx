@@ -50,6 +50,6 @@ export default function EditChild() {
             <button type="submit">Save changes</button>
           </form>
         )}
-        </div>
+      </div>
     )
    } 

@@ -11,7 +11,7 @@ const [child, setChild] = useState(null);
 const [points, setPoints] = useState(0)
 const [done, setDone] = useState(true)
 const [opacity, setOpacity] = useState(1)
-const [isTasks, setIsTasks] = useState(false)
+let isTasks
 const textCongratulations =
 [
   "Congratulations, you have achieved 30 more points !",
@@ -41,47 +41,47 @@ const handleTaskDone = async (objectTask)=>{
     setDone(false)
   }   
 }   
-
 useEffect(() => {
   const getData = async () => {
     try {      
       const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);                     
-       setChild(getChild.data.data)
-       if(console.log(child)){
-        console.log("occo")
-       }    
+       setChild(getChild.data.data)       
     } catch (error) { 
       console.error(error);  
     } 
   }  
   getData()
-},[])
+
+},[points])
 
 const playAnimation=(()=>{
-  setOpacity(0)
+  setOpacity(0) 
 })  
+{child && (
+  child.tasks.length === 0 ?isTasks= false:isTasks=true
+)}
+console.log(isTasks)
 return (
   <motion.div 
   animate={{
     y:[100,0],
-    opacity:[0,1]
+    opacity:[0,1] 
   }}  
   >      
       {child && (
-        <div>      
+        <div>       
           <motion.div className='cardPageChild'>         
             <motion.img onClick={()=>playAnimation()} src={child.imageUrl}/>        
             <h3 >{child.name}</h3>             
               <pre>Points    {child.points}</pre>
               <pre>Cups        {child.cups}</pre>                   
-          </motion.div>   
-          {!isTasks && (
-            <h4> No tasks !!!</h4 >                     
-          )}
-          {isTasks && (
-            <h4>Tasks for today</h4>          
-          )}
-        
+          </motion.div> 
+          {!isTasks && (       
+              <h4>No tasks !</h4>         
+          )}  
+            {isTasks && (
+            <h4>List tasks for today</h4>
+          )}    
           <div className='containerListTasks'>
             {child.tasks.map(e=>{
               return(            
