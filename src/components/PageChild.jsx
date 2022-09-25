@@ -74,7 +74,8 @@ return (
             <motion.img onClick={()=>playAnimation()} src={child.imageUrl}/>        
             <h3 >{child.name}</h3>             
               <pre>Points    {child.points}</pre>
-              <pre>Cups        {child.cups}</pre>                   
+              <pre>Cups        {child.cups}</pre>
+              <h4  onClick={()=>navigate(`/PageRewards/${child._id}`)}>Rewards today</h4>                    
           </motion.div> 
           {!isTasks && (       
               <h4>No tasks !</h4>         
@@ -92,7 +93,8 @@ return (
                       opacity:[0,1],                            
                     }}
                     ></motion.img>              
-                    <h3> Points  {e.points}</h3>                                 
+                    <h3> Points  {e.points}</h3>  
+                                                   
                   </motion.div>                           
                 )  
             })}         

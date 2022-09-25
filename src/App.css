@@ -37,6 +37,7 @@ img{
   border-radius: 100%;
   box-shadow: 0 0 10px rgba(0, 55, 255, 0.761);
   cursor: pointer;
+  margin: 20px;
 }
 button{
   background-color: rgba(0, 0, 255, 0);
@@ -84,11 +85,12 @@ h2{
   font-size: 25px;
   font-family: 'Luckiest Guy', cursive;
   color: rgb(188, 188, 255);
-  text-shadow: 0 0 3px  rgb(21, 21, 21);
-  letter-spacing: 1px;
+  text-shadow: 0 0 5px  rgb(21, 21, 21);
+  letter-spacing: 2px;
   margin: 10px;
   margin: 30px 0;
 }
+
 h4{
   font-size: 25px;
   font-family: 'Luckiest Guy', cursive;
@@ -290,13 +292,14 @@ pre{
   margin-bottom: 0!important;
 }
 .cardPageChild{
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 350px;
   display: flex;
   padding: 30px 20px;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: rgba(229, 203, 203, 0.69);
   margin: 55px auto;
   text-align: center;border-radius: 10px;
@@ -379,7 +382,7 @@ pre{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 110px auto;
+  margin: 60px auto;
 }
 .cardUser{
   width: 350px;

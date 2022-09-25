@@ -95,6 +95,7 @@ return (
             </div>
             <h4>Today's rewards</h4>
             <h4>  {child.points} Points  </h4>
+            
             </div>   
         )}   
            
