@@ -50,6 +50,7 @@ useEffect(() => {
             duration:1
           }}
           >Children's section</motion.h4> 
+          <hr />
            <div className='containerListTasks'>
           {child.map((ele)=>(
             <motion.div key={ele._id}
@@ -71,11 +72,9 @@ useEffect(() => {
              
           </div> 
         )}      
-          {!isChilds &&(
-    
+          {!isChilds &&(    
               <div className='marginPage'>
-            <h4>We don't have children yet, let's add them</h4>          
-       
+            <h4>We don't have children yet, let's add them</h4>       
             <button className='butt'onClick={()=>navigate("/AddChild")}>Add new child</button>      
             </div>  
         ) }

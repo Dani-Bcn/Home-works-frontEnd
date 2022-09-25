@@ -27,14 +27,14 @@ const [childs, setChilds] = useState("");
   }  
   return (
     <div>    
+      <h4>Parent's section</h4>
+      <hr />
     {!isChilds &&(
       <div className='marginPage'>
         <h4>We don't have children yet, let's add them</h4>
         <button onClick={()=>navigate("/AddChild")}><h4>Add new child</h4></button>
       </div>        
-    ) }   
-
-    
+    ) }       
       {childs && (
         <div className='containerListTasks'>       
             {childs.map((ele)=>(
@@ -43,8 +43,9 @@ const [childs, setChilds] = useState("");
                 <img  src={ele.imageUrl} width="100" alt="imgchild" />    
                 <h3>{ele.name}</h3>  
               </NavLink>
-            ))}        
-        </div>)}       
+            ))}     
+               
+        </div>)}          
     </div>
   )
 }

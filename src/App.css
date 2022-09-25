@@ -27,6 +27,7 @@ body{
 hr{
   width: 80%;
   height: 1px;
+  margin: 0 auto;
   background-color: rgb(166, 166, 166);
 }
 img{
@@ -212,7 +213,7 @@ pre{
   background-repeat: no-repeat;
   text-shadow: 0 0 4px  rgb(21, 21, 21);
   letter-spacing: 1px;
-  margin: 10px auto 65px auto;
+  margin:65px auto;
 }
 .containerCardInfo{
   width: 350px;
@@ -365,7 +366,6 @@ pre{
   width: 100px;
   height: 100px;
 }
-
 .swal2-popup {
   font-size: 20px!important;
   font-family: 'Luckiest Guy', cursive!important;
