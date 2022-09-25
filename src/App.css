@@ -392,13 +392,13 @@ pre{
   margin: 10px auto;
 }
 .styleIcon{
-  width: 20px;
+  width: 30px;
   height: 20px;
-  padding: 30px;
+  padding: 30px 50px;
   background-image: url(../public/img/flecha.png);
   background-repeat: no-repeat;
-  background-size: 110% 80%;
-  background-position: -10px;
+  background-size: 90% 80%;
+  background-position: 10px;
   text-shadow: 0 0 10px rgb(28, 28, 28);
 }
 circle{

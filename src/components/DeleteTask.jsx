@@ -8,17 +8,17 @@ export default function ListTasks() {
 const {id} = useParams()
 const [child, setChild] = useState(null)
 const [task, setTask] = useState(null); 
-var i =false
-
-const handleDelete = async (e)=>{
-  i =!i
-    try{
-        await axios.put(`${process.env.REACT_APP_API_URL}/Task/${e}`)
-        toast.success('Delete task !')  
-    }catch(error){
-        console.log(error)
-    }
-}
+const [i, setI] = useState(false)
+  const handleDelete = async (e)=>{
+   setI( i= !i)  
+      try{
+          await axios.put(`${process.env.REACT_APP_API_URL}/Task/${e}`)
+  
+             console.log(i)        
+      }catch(error){
+          console.log(error)
+      }
+  }
   return (
     <div>
       <h2>What tasks do you want to delete?</h2> 

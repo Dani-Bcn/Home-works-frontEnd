@@ -49,6 +49,9 @@ getDataTasksChilds()
 }
 return (
   <div >
+   
+   {child && <h4> Add tasks to {child.name} for today</h4>}
+   <hr />
       {task && (
         <div className='containerListTasks'> 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         

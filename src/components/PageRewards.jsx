@@ -67,35 +67,36 @@ useEffect(() => {
  console.log(timeLeisure)
 return (  
     <div > 
-            {timeLeisure && (                
-        <div>
-          
-             <h4>Tasks done {child.taskDone} / {child.goalTasks}
-                <br />
-                {numPercent} % </h4>
- 
-         <div className='containerCircle'>     
-            <motion.svg 
-                width="75"
-                height="100"
-                viewBox="0 0 200 200"
-                initial="hidden"
-                animate="visible"
-            >  
-                <motion.circle
-                    cx="100"
-                    cy="100"
-                    r="80" 
-                    stroke="#00cc88" 
-                    variants={draw}
-                    custom={1} 
-                />
-            </motion.svg>
-        </div>
-        <h4>Today's rewards</h4>
+        {timeLeisure && (                
+            // <div>          
+            //     <h4>
+            //         Tasks done {child.taskDone} / {child.goalTasks}
+            //         <br />
+            //         {numPercent} % 
+            //     </h4> 
+            <div>
+                <div className='containerCircle'>     
+                <motion.svg 
+                    width="75"
+                    height="100"
+                    viewBox="0 0 200 200"
+                    initial="hidden"
+                    animate="visible"
+                >  
+                    <motion.circle
+                        cx="100"
+                        cy="100"
+                        r="80" 
+                        stroke="#00cc88" 
+                        variants={draw}
+                        custom={1} 
+                    />
+                </motion.svg>
+            </div>
+            <h4>Today's rewards</h4>
             <h4>  {child.points} Points  </h4>
             </div>   
-    )}   
+        )}   
            
     </div>   
   )
