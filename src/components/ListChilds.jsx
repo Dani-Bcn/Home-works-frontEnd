@@ -32,7 +32,7 @@ const [childs, setChilds] = useState("");
     {!isChilds &&(
       <div className='marginPage'>
         <h4>We don't have children yet, let's add them</h4>
-        <button onClick={()=>navigate("/AddChild")}><h4>Add new child</h4></button>
+      
       </div>        
     ) }       
       {childs && (
@@ -45,7 +45,8 @@ const [childs, setChilds] = useState("");
               </NavLink>
             ))}     
                
-        </div>)}          
+        </div>)}     
+        <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>     
     </div>
   )
 }

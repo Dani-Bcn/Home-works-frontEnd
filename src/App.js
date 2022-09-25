@@ -26,15 +26,13 @@ import EditTask from './components/EditTask'
 import UpImages from './components/UpImages'
 import DeleteTasksChild from './components/DeleteTasksChild'
 import DeleteTask from './components/DeleteTask'
-import Scroll from './components/Scroll'
 function App() {
   return (
     <div className="App">
       <Toaster/>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />   
-        <Route path="/Scroll" element={<Scroll />} />       
+        <Route path="/" element={<Home />} />       
         <Route path="/SectionChilds" element={<SectionChilds />} />
         <Route path="/PageRewards/:id" element={<PageRewards />} />
         <Route path="/Date" element={<Date/>} />

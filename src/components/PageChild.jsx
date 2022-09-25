@@ -72,7 +72,9 @@ return (
         <div>       
           <motion.div className='cardPageChild'>         
             <motion.img onClick={()=>playAnimation()} src={child.imageUrl}/>        
-            <h3 >{child.name}</h3>             
+            
+            <h1 >{child.name}</h1>   
+                      
               <pre>Points    {child.points}</pre>
               <pre>Cups        {child.cups}</pre>
               <h4  onClick={()=>navigate(`/PageRewards/${child._id}`)}>Rewards today</h4>                    

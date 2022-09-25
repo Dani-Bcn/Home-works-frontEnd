@@ -68,17 +68,13 @@ useEffect(() => {
               </NavLink>      
             </motion.div>                                                
             ))} 
-
-          </div>                    
-          <button onClick={()=>navigate('/Scroll')}>Scroll</button>
+            </div>
           </div> 
         )}      
           {!isChilds &&(    
               <div className='marginPage'>
             <h2>We don't have children yet, let's add them</h2>       
-            <button className='butt' onClick={()=>navigate("/AddChild")}>Add new child</button>      
-                  
-       
+            <button className='butt' onClick={()=>navigate("/AddChild")}>Add new child</button>         
           </div>  
         ) }
       </div>
