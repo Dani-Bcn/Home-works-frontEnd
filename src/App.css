@@ -395,13 +395,13 @@ pre{
   margin: 10px auto;
 }
 .styleIcon{
-  width: 30px;
+  width: 90px;
   height: 20px;
-  padding: 30px 50px;
+  padding: 30px 20px;
   background-image: url(../public/img/flecha.png);
   background-repeat: no-repeat;
-  background-size: 90% 80%;
-  background-position: 10px;
+  background-size: 90% 90%;
+  background-position:-10px;
   text-shadow: 0 0 10px rgb(28, 28, 28);
 }
 circle{
@@ -434,6 +434,5 @@ circle{
   box-shadow: none;
   border-radius: 0px;
   margin: 0 10px;
-  background-size: 100% 100%;
-  
+  background-size: 100% 100%;  
 }

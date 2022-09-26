@@ -25,7 +25,6 @@ import EditChild from './components/EditChild'
 import EditTask from './components/EditTask'
 import UpImages from './components/UpImages'
 import DeleteTasksChild from './components/DeleteTasksChild'
-import DeleteTask from './components/DeleteTask'
 function App() {
   return (
     <div className="App">
@@ -51,8 +50,7 @@ function App() {
         <Route path="/UpImages" element={<UpImages />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />  
-        <Route path="DeleteTasksChild/:id" element={<DeleteTasksChild />} />     
-        <Route path="DeleteTask/:id" element={<DeleteTask />} />    
+        <Route path="DeleteTasksChild/:id" element={<DeleteTasksChild />} />       
       </Routes>
       <Footer/>
     </div>

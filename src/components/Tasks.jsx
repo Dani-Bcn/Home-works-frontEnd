@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import { NavLink , useParams, useNavigate} from 'react-router-dom'
 
 export default function ListTasks() {
@@ -22,6 +23,19 @@ const [refresh, setRfresh] = useState(false)
     }
     getData();
   }, [refresh])
+
+  const handleConfirm=(e)=>{
+    Swal.fire({
+      title: 'Are you sure to delete task?',
+      showDenyButton: true,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+       handleDelete(e)
+      } 
+    })
+  }  
+
   const handleDelete= async(e)=>{  
     console.log(e)
     setRfresh(!refresh)
@@ -43,7 +57,7 @@ const [refresh, setRfresh] = useState(false)
               <img src={ele.imageUrl}/>     
               <h2>Points  {ele.points}</h2>
                 <NavLink to={`/EditTask/${ele._id}`}><button>Edit task</button></NavLink> 
-              <button onClick={()=>handleDelete(ele._id)}>Delete task</button>                   
+              <button onClick={()=>handleConfirm(ele._id)}>Delete task</button>                   
             </div>             
           ))}       
         </div>)}
