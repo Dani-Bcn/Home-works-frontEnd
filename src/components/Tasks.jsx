@@ -47,7 +47,7 @@ const [refresh, setRfresh] = useState(false)
       }   
   }
   return (
-  <div >
+  <div className='tasksBack'>
       <NavLink to="/CreateTask"><button className='butt'><h4>Create task</h4></button></NavLink>             
       {task && (
         <div className='containerListTasks' > 

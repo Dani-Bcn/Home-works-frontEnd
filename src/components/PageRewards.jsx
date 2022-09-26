@@ -55,7 +55,7 @@ cupPaint.map((e,i)=>{
    }
 
 return (  
-    <div > 
+    <div className='backPageRewards'> 
         {child && (                
             <div>     
         <h4>Rewards for today</h4>             
