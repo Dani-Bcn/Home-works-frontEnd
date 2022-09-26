@@ -49,8 +49,7 @@
       try {      
         const getChild = await axios.put(`${process.env.REACT_APP_API_URL}/child/resetPoints/${id}`);                           
         setChild(getChild.data.data) 
-        setChange(!change)
-        console.log(change)           
+        setChange(!change)     
       } catch (error) { 
           console.error(error); 
       } 
@@ -60,7 +59,6 @@
         const getChild = await axios.put(`${process.env.REACT_APP_API_URL}/child/resetCups/${id}`);                           
         setChild(getChild.data.data) 
         setChange(!change)
-        console.log(change)           
       } catch (error) { 
           console.error(error); 
       } 

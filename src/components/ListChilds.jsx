@@ -31,8 +31,7 @@ const [childs, setChilds] = useState("");
       <hr />
     {!isChilds &&(
       <div className='marginPage'>
-        <h4>We don't have children yet, let's add them</h4>
-      
+        <h4>We don't have children yet, let's add them</h4>      
       </div>        
     ) }       
       {childs && (
@@ -43,8 +42,7 @@ const [childs, setChilds] = useState("");
                 <img  src={ele.imageUrl} width="100" alt="imgchild" />    
                 <h3>{ele.name}</h3>  
               </NavLink>
-            ))}     
-               
+            ))}               
         </div>)}     
         <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>     
     </div>

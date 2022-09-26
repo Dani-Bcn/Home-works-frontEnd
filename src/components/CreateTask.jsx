@@ -48,7 +48,7 @@ export default function CreateTasks() {
     try {
         await axios.post(`${process.env.REACT_APP_API_URL}/task`, { name: task.name, imageUrl: task.imageUrl, points: task.points, }, { headers: { Authorization: `Bearer ${storedToken}` } });           
         toast.success('Project created successfully')
-        navigate("/ListTasks")
+        navigate("/Tasks")
     } catch (error) {
       console.log(error);
     }

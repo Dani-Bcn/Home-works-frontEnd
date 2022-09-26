@@ -50,8 +50,7 @@ useEffect(() => {
       console.error(error);  
     } 
   }  
-  getData()
-
+  getData()  
 },[points])
 
 const playAnimation=(()=>{
