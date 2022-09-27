@@ -57,17 +57,14 @@ const [refresh, setRfresh] = useState(false)
               duration:1
             }}
         ><h4>Create task</h4></motion.button>
-        </NavLink>             
-        
+        </NavLink>  
     
           <motion.hr 
             animate={{
               scaleX:[0,1],
               x:[-150,1]
             }}
-            transition={{
-              delay:0.2
-            }}/>
+         />
       
       {task && (
         <div className='containerListTasks' > 
