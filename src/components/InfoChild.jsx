@@ -75,7 +75,7 @@
               x:[-50,0]
             }}
             transition={{
-              delay:0.2
+              duration:1
             }}
            /> 
           <motion.h6

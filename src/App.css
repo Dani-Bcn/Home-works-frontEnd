@@ -266,7 +266,7 @@ pre{
   color: rgb(169, 187, 233);
   text-shadow: 0 0 4px rgb(39, 39, 39);
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   backdrop-filter: blur(10px);
   border-radius: 20px;

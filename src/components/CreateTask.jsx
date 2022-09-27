@@ -51,7 +51,7 @@ export default function CreateTasks() {
     }
   }  
   return (   
-    <motion.form  className='form'onSubmit={handleSubmit}
+    <motion.form  className='form' onSubmit={handleSubmit}
     animate={{
       y:[400,-200,0],
       opacity:[0.3,1],
