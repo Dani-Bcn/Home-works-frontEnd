@@ -93,7 +93,7 @@ const handleDelete = async (e)=>{
           }) 
         )}        
       </div>   
-         <NavLink className={"containerTasksDone"} to="/ListChilds"><button >Done</button> </NavLink>                   
+         <NavLink className="containerTasksDone" to="/ListChilds"><button >Done</button> </NavLink>                   
       </div>
   )
 }      
