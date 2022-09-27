@@ -81,7 +81,6 @@ const [refresh, setRfresh] = useState(false)
             }}
             transition={{
               duration:0.5,
-              delay:0.3
             }}          
             >
               <h3> {ele.name}</h3>        
@@ -92,7 +91,7 @@ const [refresh, setRfresh] = useState(false)
             </motion.div>             
           ))}       
         </div>)}
-      {!task && <p>Tasks not found</p>}
+    <s></s>
     </div>
   )
 }      
