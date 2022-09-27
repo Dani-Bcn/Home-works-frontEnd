@@ -51,17 +51,16 @@ const [refresh, setRfresh] = useState(false)
       <NavLink to="/CreateTask">
         <motion.button className='butt'
              animate={{
-              x:[-200,50,0],          
+              x:[-100,50,0],          
             }}
             transition={{
               duration:1
             }}
         ><h4>Create task</h4></motion.button>
-        </NavLink>  
-    
+        </NavLink>      
           <motion.hr 
             animate={{
-              scaleX:[0,1],
+              scaleX:[0.2,1],
               x:[-150,1]
             }}
          />
@@ -91,7 +90,6 @@ const [refresh, setRfresh] = useState(false)
             </motion.div>             
           ))}       
         </div>)}
-    <s></s>
     </div>
   )
 }      
