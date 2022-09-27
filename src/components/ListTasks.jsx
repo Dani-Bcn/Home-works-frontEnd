@@ -1,8 +1,7 @@
-/* eslint-disable array-callback-return */
-
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import {motion} from 'framer-motion'
 import { NavLink , useParams} from 'react-router-dom';
 
 export default function ListTasks() {
@@ -34,7 +33,6 @@ useEffect(()=>{
   } 
 getDataTasksChilds()
 },[])
-//Add chores to child
   const handleAddTask = async (e) =>{   
   if(noRepaeatTasks.includes(e)){         
     }else{  
@@ -54,12 +52,26 @@ return (
    <hr />
       {task && (
         <div className='containerListTasks'> 
-          {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
-            <div key={ele._id} className='cardTasks' >
+          {task.map((ele)=>(
+                     
+            <motion.div key={ele._id} className='cardTasks'
+            initial={{             
+              x:-300,
+              opacity:0
+             }}
+
+            whileInView={{             
+              x:0,
+              opacity:1            
+            }}
+            transition={{
+              duration:0.5,
+              delay:0.3
+            }}           >
               <h2> {ele.name}</h2>         
               <img src={ele.imageUrl} onClick={()=>handleAddTask(ele._id)} width="100" alt="image"/>
               <h2>Points  {ele.points}</h2>
-              </div>             
+              </motion.div>             
             ))}            
         </div>)}
         <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>      

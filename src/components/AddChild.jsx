@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import {motion} from 'framer-motion'
 import axios from 'axios';
 
 export default function AddChild() {
@@ -19,10 +20,7 @@ export default function AddChild() {
     cups:0,
     goalTasks:0,
     taskDone:0,
-  })
-  // In case of multiple file upload:
-  // const [imageUrls, setImageUrls] = useState([]);
-  // const [imgForUser, setImgForUser] = useState([]);  
+  }) 
   const handleChange = (e) => { 
     setChild(prev => {
       return {
@@ -43,9 +41,6 @@ export default function AddChild() {
           imageUrl: response.data.fileUrl
         }
       })
-      // In case of multiple file upload
-      // setImageUrls(prev => [...prev, response.data.fileUrl]);
-      // setImgForUser(prev => [...prev, e.target.files[0].name]);
     } catch (error) {
       console.error(error);
     }
@@ -61,7 +56,15 @@ export default function AddChild() {
     }
   }  
   return ( 
-      <form  className='formSignUp'onSubmit={handleSubmit}>      
+      <motion.form  className='formSignUp'onSubmit={handleSubmit}
+        animate={{
+          y:[400,-200,0],
+          opacity:[0.3,1],
+        }}    
+        transition={{
+          duration:1.5
+        }}      
+      >      
         <label>Name</label>
         <input type="text" name="name" placeholder="Name" value={child.name} onChange={handleChange} />
         <label>Year of Birth</label>
@@ -73,6 +76,6 @@ export default function AddChild() {
         <label>Cups</label>
         <input type="number" min="0"  name="cups" placeholder="Cups" value={child.cups} onChange={handleChange} />       
         <button type="submit">Save</button>   
-      </form>
+      </motion.form>
   ) 
 }

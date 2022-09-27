@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import {motion} from 'framer-motion'
 
 export default function CreateTasks() {
   const storedToken = localStorage.getItem('authToken');
@@ -29,16 +30,12 @@ export default function CreateTasks() {
     uploadData.append("imageUrl", e.target.files[0]);
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/child/upload`, uploadData, { headers: { Authorization: `Bearer ${storedToken}` }});
-      // console.log(response.data.fileUrl);
       setTask(prev => {
         return {
           ...prev,
           imageUrl: response.data.fileUrl
         }
       })
-      // In case of multiple file upload
-      // setImageUrls(prev => [...prev, response.data.fileUrl]);
-      // setImgForUser(prev => [...prev, e.target.files[0].name]);
     } catch (error) {
       console.error(error);
     }
@@ -54,7 +51,15 @@ export default function CreateTasks() {
     }
   }  
   return (   
-    <form  className='form'onSubmit={handleSubmit}> 
+    <motion.form  className='form'onSubmit={handleSubmit}
+    animate={{
+      y:[400,-200,0],
+      opacity:[0.3,1],
+    }}    
+    transition={{
+      duration:1.5
+    }}    
+    > 
       <label>Name</label>     
       <input type="text" name="name" placeholder="Name" value={task.name} onChange={handleChange} />
       <label>Points</label>
@@ -62,6 +67,6 @@ export default function CreateTasks() {
       <label>Pîcture</label>
       <input type="file" onChange={(e)=>{handleUploadImg(e)}} />        
       <button type="submit">Save</button>   
-    </form>    
+    </motion.form>    
   ) 
 }

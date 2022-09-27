@@ -18,16 +18,15 @@ const [count, setCount] = useState([]);
     getData();
   }, []);
   return (
-    <div>     
+    <div >     
       <h2>Count</h2> 
       {count && (
-        <div className='cardUser'>    
+        <div   className="cardChildInfo">    
             <h5> Name</h5><h2>{user.username}</h2>
-            <h5> Email</h5><h2>{user.email}</h2>
-            <button>Edit</button>         
+            <h5> Email</h5><h2>{user.email}</h2>      
         </div>
         )}
-      {!count && <p>count not found</p>}
+      {!count && <p>count not found</p>} 
      </div>
   )
 }

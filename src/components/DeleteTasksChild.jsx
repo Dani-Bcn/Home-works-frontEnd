@@ -4,8 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 import { NavLink , useParams} from 'react-router-dom';
+import {motion} from 'framer-motion'
 export default function ListTasks() {
-  //Tenemos el id porque ya estamos en la página con la ruta id del child
 const {id} = useParams()
 const [child, setChild] = useState(null)
 const [task, setTask] = useState(null); 
@@ -52,20 +52,48 @@ const handleDelete = async (e)=>{
 }
   return (
     <div>
-      <h2>What tasks do you want to delete?</h2> 
+      <motion.h2
+        animate={{
+          x:[-200,50,0],          
+        }}
+        transition={{
+          duration:1
+        }}
+      >What tasks do you want to delete?</motion.h2> 
       <div className='containerListTasks'>
+      <motion.hr 
+       animate={{
+        scaleX:[0,1],
+        x:[-150,1]
+      }}
+      transition={{
+        delay:0.4
+      }}/>
         {child && (
           child.tasks.map((e)=>{
             return (
-              <div  className='cardTasks' onClick={()=>{handleConfirm(e._id)}} key={e._id}>
+              <motion.div  className='cardTasks' onClick={()=>{handleConfirm(e._id)}} key={e._id}
+              initial={{             
+                x:-300,
+                opacity:0
+               }}  
+              whileInView={{             
+                x:0,
+                opacity:1            
+              }}
+              transition={{
+                duration:0.5,
+                delay:0.4
+              }}
+              >
                 <h3>{e.name}</h3>
                 <img src={e.imageUrl}></img>  
-              </div>               
+              </motion.div>               
             )            
           }) 
-        )}    
-      </div>          
-      <NavLink to="/ListChilds"><button>Done</button> </NavLink>                  
-    </div>
+        )}        
+      </div>   
+         <NavLink className={"containerTasksDone"} to="/ListChilds"><button >Done</button> </NavLink>                   
+      </div>
   )
 }      

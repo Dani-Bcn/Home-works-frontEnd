@@ -67,16 +67,31 @@ return (
     opacity:[0,1] 
   }}  
   >      
+    
+    <motion.h4
+          animate={{
+            x:[-200,50,0],          
+          }}
+          transition={{
+            duration:1
+          }}
+          >Children's tasks</motion.h4> 
+          <motion.hr 
+            animate={{
+              scaleX:[0,1],
+              x:[-150,1]
+            }}
+            transition={{
+              delay:0.2
+            }}/>
       {child && (
         <div>       
           <motion.div className='cardPageChild'>         
-            <motion.img onClick={()=>playAnimation()} src={child.imageUrl}/>        
-            
-            <h1 >{child.name}</h1>   
-                      
+            <motion.img onClick={()=>playAnimation()} src={child.imageUrl}/>            
+            <h1 >{child.name}</h1>                      
               <pre>Points    {child.points}</pre>
               <pre>Cups        {child.cups}</pre>
-              <h4  onClick={()=>navigate(`/PageRewards/${child._id}`)}>Rewards today</h4>                    
+              <h4  onClick={()=>navigate(`/PageRewards/${child._id}`)}>Rewards</h4>                    
           </motion.div> 
           {!isTasks && (       
               <h4>No tasks !</h4>         
@@ -87,15 +102,27 @@ return (
           <div className='containerListTasks'>
             {child.tasks.map(e=>{
               return(            
-                <motion.div  className='cardTasks' key={e._id} onClick={()=>handleTaskDone(e)}>
+                <motion.div  className='cardTasks' key={e._id} onClick={()=>handleTaskDone(e)}
+                initial={{             
+                  x:-300,
+                  opacity:0
+                 }}
+    
+                whileInView={{             
+                  x:0,
+                  opacity:1            
+                }}
+                transition={{
+                  duration:0.5,
+                  delay:0.3
+                }}          >
                   <h2 >{e.name}</h2>
                     <motion.img width={100} src={e.imageUrl} alt="img task"
                       animate={{
                       opacity:[0,1],                            
                     }}
-                    ></motion.img>              
-                    <h3> Points  {e.points}</h3>  
-                                                   
+                  ></motion.img>              
+                    <h3> Points  {e.points}</h3>                                                   
                   </motion.div>                           
                 )  
             })}         

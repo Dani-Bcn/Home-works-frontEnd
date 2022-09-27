@@ -14,7 +14,6 @@ export default function Footer() {
       width: 400,
       showDenyButton: true,
       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         logOutUser() 
         navigate('/')

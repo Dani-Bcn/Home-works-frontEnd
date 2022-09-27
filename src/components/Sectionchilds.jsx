@@ -9,7 +9,6 @@ const storedToken = localStorage.getItem('authToken');
 const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 const navigate = useNavigate()
 const [child, setChild] = useState([]);
-let coco = 200
 let isChilds =false
 if(child.length !== 0){
   isChilds=true
@@ -45,7 +44,14 @@ useEffect(() => {
             duration:1
           }}
           >Children's section</motion.h4> 
-          <hr />
+          <motion.hr 
+            animate={{
+              scaleX:[0,1],
+              x:[-150,1]
+            }}
+            transition={{
+              delay:0.2
+            }}/>
       {isLoggedIn && (
       <div > 
       {isChilds && (
@@ -55,13 +61,13 @@ useEffect(() => {
           {child.map((ele)=>(
             <motion.div key={ele._id}
              animate={{
-                x:[coco,-50,0]
+                x:[200,-50,0]
               }}
               transition={{
                 duration:1
               }}
             >         
-                <NavLink  key={ele._id} className='cardPageChild' to={`/PageChild/${ele._id}`}>                
+              <NavLink  key={ele._id} className='cardPageChild' to={`/PageChild/${ele._id}`}>                
                   <h3>What tasks do I have for today? </h3>
                   <img src={ele.imageUrl}  alt="img_Child" />                      
                   <h3>{ele.name}</h3>               
@@ -72,10 +78,17 @@ useEffect(() => {
           </div> 
         )}      
           {!isChilds &&(    
-              <div className='marginPage'>
+              <motion.div className='marginPage'
+              animate={{
+                x:[200,-50,0]
+              }}
+              transition={{
+                duration:1
+              }}
+              >
             <h2>We don't have children yet, let's add them</h2>       
-            <button className='butt' onClick={()=>navigate("/AddChild")}>Add new child</button>         
-          </div>  
+            <button className='butt' onClick={()=>navigate("/AddChild")}>Add child</button>         
+          </motion.div>  
         ) }
       </div>
     )}

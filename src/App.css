@@ -320,15 +320,16 @@ pre{
   background-color: rgba(255, 129, 129, 0.45);
   margin: 10px 10px;
   text-align: center;border-radius: 10px;
-  font-size: 15px;
+  font-size: 20px;
   font-family: 'Luckiest Guy', cursive;
   color: rgb(177, 199, 255);
   text-shadow: 0 0 4px  rgb(21, 21, 21);
   backdrop-filter: blur(5px);
 }
+
 .cardTasks{
   width: 300px;
-  height: 250px;
+  height: 350px;
   display: flex;
   padding: 30px 0;
   flex-direction: column;
@@ -348,7 +349,6 @@ pre{
   color: rgb(255, 213, 164);
   text-shadow: 0 0 4px  rgb(21, 21, 21);
   letter-spacing: 2px;
-  margin: 30px 0;
 }
 .cardTasks img{
   width: 100px;
@@ -358,13 +358,7 @@ pre{
   width: 100px;
   height: 100px;
 }
-.cardTasksEdit h3{
-  font-size: 25px;
-  color: rgb(255, 213, 164);
-  text-shadow: 0 0 4px  rgb(21, 21, 21);
-  letter-spacing: 2px;
-  margin: 30px 0;
-}
+
 .cardTasksEdit img{
   width: 100px;
   height: 100px;
@@ -435,10 +429,10 @@ circle{
   background-size: 100% 100%;  
 }
 .backPageRewards{
-  width: 100%;
+  width: 100x;
   height: 100%;
   background-image: url("../public/img/rewards.png");
-  background-size: 100% 100%;
+  background-size:100% 80%;
   background-repeat: no-repeat;
   backdrop-filter: blur(30px);  
 }
@@ -449,4 +443,13 @@ circle{
   background-size: 100% 900px;
   background-repeat: no-repeat;
   backdrop-filter: blur(30px);  
+}
+.containerTasksDone{
+  width: 350px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
 }
