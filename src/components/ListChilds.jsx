@@ -7,12 +7,10 @@ import {motion} from 'framer-motion'
 
 export default function ListChilds() {
 const storedToken = localStorage.getItem('authToken');
-
+let isChilds = false
 const navigate = useNavigate()
-const [childs, setChilds] = useState(false);
-
-
-  useEffect(() => {   
+const [childs, setChilds] = useState("");
+  useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/mine`, { headers: { Authorization: `Bearer ${storedToken}` }});
@@ -23,13 +21,13 @@ const [childs, setChilds] = useState(false);
   }
     getData();
   }, []);  
-  let isChilds =false
-if(childs.length !== 0){
-  isChilds=true
-}else{
-  isChilds=false
-}
- 
+  if(childs.length !== 0){
+    isChilds=true 
+   
+  }else{
+    isChilds=false
+     console.log(childs)
+  }  
   return (
     <div>    
       <motion.h4 
@@ -50,7 +48,7 @@ if(childs.length !== 0){
         delay:0.2
       }}/>
       
-  {!isChilds &&(
+    {!isChilds &&(
       <motion.div className='marginPage'
       animate={{
         x:[100,-50,0],
@@ -62,10 +60,8 @@ if(childs.length !== 0){
         <h4>We don't have children yet, let's add them</h4> 
        <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>      
       </motion.div>        
-    ) }        
-  
-       {childs && (
-
+    ) }       
+      {isChilds && (
         <motion.div className='containerListTasks' 
         
         animate={{
@@ -86,10 +82,8 @@ if(childs.length !== 0){
               </NavLink>
             ))}
             <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>           
-        </motion.div>   
-        )}    
- 
-           
+        </motion.div>
+        )}      
     </div>
   )
 }
