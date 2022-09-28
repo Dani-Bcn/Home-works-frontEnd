@@ -71,8 +71,7 @@ return (
               </motion.div>             
             ))}            
         </div>)}
-        <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>      
-      {!task && <p>Tasks not found</p>}
+        <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>   
     </div>
   )
 }      
