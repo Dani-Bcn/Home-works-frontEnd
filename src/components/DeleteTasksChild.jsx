@@ -7,7 +7,7 @@ import { NavLink , useParams} from 'react-router-dom';
 import {motion} from 'framer-motion'
 export default function ListTasks() {
 const {id} = useParams()
-const [child, setChild] = useState(null)
+const [child, setChild] = useState(false)
 const [task, setTask] = useState(null); 
 useEffect(()=>{
   const getDataTasksChilds = async () => {
@@ -90,10 +90,15 @@ const handleDelete = async (e)=>{
                 <img src={e.imageUrl}></img>  
               </motion.div>               
             )            
-          }) 
+          })           
         )}        
       </div>   
-         <NavLink className="containerTasksDone" to="/ListChilds"><button >Done</button> </NavLink>                   
+   {!child &&
+     <NavLink className="containerTasksDone" to="/ListChilds"><button >Done</button> </NavLink>                   
+   }
+       
+
+        
       </div>
   )
 }      
