@@ -11,6 +11,7 @@ const storedToken = localStorage.getItem('authToken');
 const navigate = useNavigate()
 const [childs, setChilds] = useState(false);
 
+
   useEffect(() => {   
     const getData = async () => {
       try {
@@ -22,6 +23,12 @@ const [childs, setChilds] = useState(false);
   }
     getData();
   }, []);  
+  let isChilds =false
+if(childs.length !== 0){
+  isChilds=true
+}else{
+  isChilds=false
+}
  
   return (
     <div>    
@@ -43,7 +50,7 @@ const [childs, setChilds] = useState(false);
         delay:0.2
       }}/>
       
-  {!childs &&(
+  {!isChilds &&(
       <motion.div className='marginPage'
       animate={{
         x:[100,-50,0],
@@ -79,11 +86,10 @@ const [childs, setChilds] = useState(false);
               </NavLink>
             ))}
             <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>           
-        </motion.div>
-   
-        )}      
-
-     
+        </motion.div>   
+        )}    
+ 
+           
     </div>
   )
 }
