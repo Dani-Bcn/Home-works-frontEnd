@@ -50,7 +50,7 @@ const [refresh, setRfresh] = useState(false)
   <div className='tasksBack'>
       <NavLink to="/CreateTask">
         <motion.button className='butt'
-             animate={{
+            animate={{
               x:[-100,50,0],          
             }}
             transition={{
@@ -63,8 +63,7 @@ const [refresh, setRfresh] = useState(false)
               scaleX:[0.2,1],
               x:[-150,1]
             }}
-         />
-      
+         />      
       {task && (
         <div className='containerListTasks' > 
           {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         

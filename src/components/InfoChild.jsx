@@ -120,7 +120,7 @@
         </div>
       )}   
       <div className='cardInfo'>
-         {!child && <p>child not found</p>}
+        
         <NavLink to={`/EditChild/${id}`}>
           <motion.button
           // animate={{
