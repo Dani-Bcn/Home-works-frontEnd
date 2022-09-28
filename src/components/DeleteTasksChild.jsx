@@ -93,7 +93,7 @@ const handleDelete = async (e)=>{
           })           
         )}        
       </div>   
-   {!child &&
+   {child &&
      <NavLink className="containerTasksDone" to="/ListChilds"><button >Done</button> </NavLink>                   
    }
        
