@@ -89,31 +89,34 @@
             >
           {child.name}</motion.h6>
           <motion.h2
-            animate={{
-              opacity:[0,1],
-              x:[-50,0]
-            }}
-            transition={{
-              delay:0.5
-            }}> Age {actualYear - child.yearOfBirth}</motion.h2>             
+            // animate={{
+            //   opacity:[0,1],
+            //   x:[-50,0]
+            // }}
+            // transition={{
+            //   delay:0.5
+            // }}
+            > Age {actualYear - child.yearOfBirth}</motion.h2>             
           <hr />
           <motion.h2
-            animate={{
-              opacity:[0,1],
-              x:[-50,0]
-            }}
-            transition={{
-              delay:0.6
-            }}> Points : {child.points}</motion.h2>    
+            // animate={{
+            //   opacity:[0,1],
+            //   x:[-50,0]
+            // }}
+            // transition={{
+            //   delay:0.6
+            // }}
+            > Points : {child.points}</motion.h2>    
           <hr />
           <motion.h2
-            animate={{
-              opacity:[0,1],
-              x:[-50,0]
-            }}
-            transition={{
-              delay:0.8
-            }}> Cups : {child.cups}</motion.h2>      
+            // animate={{
+            //   opacity:[0,1],
+            //   x:[-50,0]
+            // }}
+            // transition={{
+            //   delay:0.8
+            // }}
+            > Cups : {child.cups}</motion.h2>      
         </div>
       )}   
       <div className='cardInfo'>
