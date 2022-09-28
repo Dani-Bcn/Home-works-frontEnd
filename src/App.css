@@ -453,3 +453,7 @@ circle{
   flex-direction: column;
   justify-content: center;
 }
+.noItems{
+  
+  margin: 500px;
+}
