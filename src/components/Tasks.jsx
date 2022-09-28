@@ -89,7 +89,7 @@ const [refresh, setRfresh] = useState(false)
             </motion.div>             
           ))}       
         </div>)} 
-        {task && (
+        {!task && (
           <div>
             <h2 className='noItems'>No tasks</h2>
           </div>
