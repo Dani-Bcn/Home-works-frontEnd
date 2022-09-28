@@ -46,7 +46,8 @@ getDataTasksChilds()
   } 
 }
 return (
-  <div >   
+ 
+     <div >   
    {child && <h4> Add tasks to {child.name} for today</h4>}
    <hr />
       {task && (
@@ -70,8 +71,15 @@ return (
               <h2>Points  {ele.points}</h2>
               </motion.div>             
             ))}            
-        </div>)}
+        </div>
+        )}
         <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>   
-    </div>
+   
+     {!child && (
+      <div>
+        <h2 className='noItems'>No tasks</h2>
+      </div>
+    )}
+ </div>
   )
 }      
