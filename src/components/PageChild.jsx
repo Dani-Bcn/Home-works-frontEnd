@@ -130,7 +130,11 @@ return (
           <NavLink to='/Sectionchilds'><button>Done</button></NavLink>
         </div>
       )}      
-      {!child && <p>child not found</p>}
+      {!child && 
+      <div className='noItems'>
+            <p>child not found</p>
+      </div>      
+      }
   </motion.div>   
 )}
  

@@ -75,7 +75,7 @@ return (
         )}
         <NavLink to={`/InfoChild/${id}`}><button>Save tasks</button> </NavLink>   
    
-     {!child && (
+     {!task && (
       <div>
         <h2 className='noItems'>No tasks</h2>
       </div>

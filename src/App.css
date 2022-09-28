@@ -452,6 +452,7 @@ circle{
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 .noItems{  
   margin: 500px;
