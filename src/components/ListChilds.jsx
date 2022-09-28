@@ -11,10 +11,8 @@ const storedToken = localStorage.getItem('authToken');
 const navigate = useNavigate()
 const [childs, setChilds] = useState(false);
 
-  useEffect(() => {
-   
+  useEffect(() => {   
     const getData = async () => {
-
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/mine`, { headers: { Authorization: `Bearer ${storedToken}` }});
         setChilds(response.data.data)

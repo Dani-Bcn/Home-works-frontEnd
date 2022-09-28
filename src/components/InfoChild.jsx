@@ -70,126 +70,121 @@
       {child && (
         <div  className='cardInfo'>           
           <motion.img width={100} src={child.imageUrl}
-            // animate={{
-            //   opacity:[0,1],
-            //   x:[-50,0]
-            // }}
-            // transition={{
-            //   duration:1
-            // }}
+            animate={{
+              opacity:[0,1],
+              x:[-50,0]
+            }}
+            transition={{
+              duration:1
+            }}
            /> 
           <motion.h6
-            // animate={{
-            //   opacity:[0,1],
-            //   x:[-50,0]
-            // }}
-            // transition={{
-            //   delay:0.3
-            // }}
-            >
-          {child.name}</motion.h6>
+            animate={{
+              opacity:[0,1],
+              x:[-50,0]
+            }}
+            transition={{
+              delay:0.3
+            }}>{child.name}</motion.h6>
           <motion.h2
-            // animate={{
-            //   opacity:[0,1],
-            //   x:[-50,0]
-            // }}
-            // transition={{
-            //   delay:0.5
-            // }}
-            > Age {actualYear - child.yearOfBirth}</motion.h2>             
+            animate={{
+              opacity:[0,1],
+              x:[-50,0]
+            }}
+            transition={{
+              delay:0.5
+            }}> Age {actualYear - child.yearOfBirth}</motion.h2>             
           <hr />
           <motion.h2
-            // animate={{
-            //   opacity:[0,1],
-            //   x:[-50,0]
-            // }}
-            // transition={{
-            //   delay:0.6
-            // }}
-            > Points : {child.points}</motion.h2>    
+            animate={{
+              opacity:[0,1],
+              x:[-50,0]
+            }}
+            transition={{
+              delay:0.6
+            }}> Points : {child.points}</motion.h2>    
           <hr />
           <motion.h2
-            // animate={{
-            //   opacity:[0,1],
-            //   x:[-50,0]
-            // }}
-            // transition={{
-            //   delay:0.8
-            // }}
-            > Cups : {child.cups}</motion.h2>      
+            animate={{
+              opacity:[0,1],
+              x:[-50,0]
+            }}
+            transition={{
+              delay:0.8
+            }}> Cups : {child.cups}</motion.h2>      
         </div>
       )}   
       <div className='cardInfo'>
-        
+         {!child && <p>child not found</p>}
         <NavLink to={`/EditChild/${id}`}>
           <motion.button
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //   delay:0.2
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+            delay:0.2
+          }}
           >Edit child</motion.button>
         </NavLink>         
         <NavLink to={`/ListTasks/${id}`}>
           <motion.button
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //   delay:0.3
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+            delay:0.3
+          }}
          >Add tasks</motion.button>
         </NavLink>
         <NavLink to={`/DeleteTasksChild/${id}`}>
           <motion.button
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //   delay:0.4
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+            delay:0.4
+          }}
          >Delete tasks</motion.button>
         </NavLink>
         <motion.button onClick={()=>resetPoints()}
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //   delay:0.5
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+            delay:0.5
+          }}
          >Reset Points</motion.button>
         <motion.button onClick={()=>resetCups()}
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //  delay:0.6
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+           delay:0.6
+          }}
          >Reset Cups</motion.button>
         <motion.button onClick={()=>handleConfirm()}
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //   delay:0.7
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+            delay:0.7
+          }}
          >Delete child</motion.button>
         <NavLink to={`/PageRewards/${id}`}>
           <motion.button
-          // animate={{
-          //   opacity:[0,1],
-          //   x:[50,0]
-          // }}
-          // transition={{
-          //   delay:0.8
-          // }}
+          animate={{
+            opacity:[0,1],
+            x:[50,0]
+          }}
+          transition={{
+            delay:0.8
+          }}
          >Rewards</motion.button>
         </NavLink>
       </div>   
