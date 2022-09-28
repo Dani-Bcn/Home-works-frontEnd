@@ -50,7 +50,7 @@ function App() {
         <Route path="/UpImages" element={<UpImages />} />
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />  
-        <Route path="DeleteTasksChild/:id" element={<DeleteTasksChild />} />       
+        <Route path="DeleteTasksChild/:id" element={<DeleteTasksChild />} />        
       </Routes>
       <Footer/>
     </div>

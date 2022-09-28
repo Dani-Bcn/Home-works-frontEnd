@@ -70,22 +70,24 @@
       {child && (
         <div  className='cardInfo'>           
           <motion.img width={100} src={child.imageUrl}
-            animate={{
-              opacity:[0,1],
-              x:[-50,0]
-            }}
-            transition={{
-              duration:1
-            }}
+            // animate={{
+            //   opacity:[0,1],
+            //   x:[-50,0]
+            // }}
+            // transition={{
+            //   duration:1
+            // }}
            /> 
           <motion.h6
-            animate={{
-              opacity:[0,1],
-              x:[-50,0]
-            }}
-            transition={{
-              delay:0.3
-            }}>{child.name}</motion.h6>
+            // animate={{
+            //   opacity:[0,1],
+            //   x:[-50,0]
+            // }}
+            // transition={{
+            //   delay:0.3
+            // }}
+            >
+          {child.name}</motion.h6>
           <motion.h2
             animate={{
               opacity:[0,1],

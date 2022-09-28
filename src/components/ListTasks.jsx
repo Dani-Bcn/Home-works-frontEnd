@@ -46,27 +46,24 @@ getDataTasksChilds()
   } 
 }
 return (
-  <div >
-   
+  <div >   
    {child && <h4> Add tasks to {child.name} for today</h4>}
    <hr />
       {task && (
         <div className='containerListTasks'> 
-          {task.map((ele)=>(
-                     
+          {task.map((ele)=>(                     
             <motion.div key={ele._id} className='cardTasks'
             initial={{             
               x:-300,
               opacity:0
              }}
-
             whileInView={{             
               x:0,
               opacity:1            
             }}
             transition={{
               duration:0.5,
-              delay:0.3
+              delay:0.5
             }}           >
               <h2> {ele.name}</h2>         
               <img src={ele.imageUrl} onClick={()=>handleAddTask(ele._id)} width="100" alt="image"/>
