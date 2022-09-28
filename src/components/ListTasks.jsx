@@ -52,7 +52,7 @@ return (
       {task && (
         <div className='containerListTasks'> 
           {task.map((ele)=>(                     
-            <motion.div key={ele._id} className='cardTasks'
+            <motion.div  drag whileDrag={"y"}key={ele._id} className='cardTasks'
             initial={{             
               x:-300,
               opacity:0
@@ -64,7 +64,7 @@ return (
             transition={{
               duration:0.5,
               delay:0.5
-            }}           >
+            }}>
               <h2> {ele.name}</h2>         
               <img src={ele.imageUrl} onClick={()=>handleAddTask(ele._id)} width="100" alt="image"/>
               <h2>Points  {ele.points}</h2>

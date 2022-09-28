@@ -123,73 +123,73 @@
          {!child && <p>child not found</p>}
         <NavLink to={`/EditChild/${id}`}>
           <motion.button
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-            delay:0.2
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //   delay:0.2
+          // }}
           >Edit child</motion.button>
         </NavLink>         
         <NavLink to={`/ListTasks/${id}`}>
           <motion.button
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-            delay:0.3
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //   delay:0.3
+          // }}
          >Add tasks</motion.button>
         </NavLink>
         <NavLink to={`/DeleteTasksChild/${id}`}>
           <motion.button
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-            delay:0.4
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //   delay:0.4
+          // }}
          >Delete tasks</motion.button>
         </NavLink>
         <motion.button onClick={()=>resetPoints()}
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-            delay:0.5
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //   delay:0.5
+          // }}
          >Reset Points</motion.button>
         <motion.button onClick={()=>resetCups()}
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-           delay:0.6
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //  delay:0.6
+          // }}
          >Reset Cups</motion.button>
         <motion.button onClick={()=>handleConfirm()}
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-            delay:0.7
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //   delay:0.7
+          // }}
          >Delete child</motion.button>
         <NavLink to={`/PageRewards/${id}`}>
           <motion.button
-          animate={{
-            opacity:[0,1],
-            x:[50,0]
-          }}
-          transition={{
-            delay:0.8
-          }}
+          // animate={{
+          //   opacity:[0,1],
+          //   x:[50,0]
+          // }}
+          // transition={{
+          //   delay:0.8
+          // }}
          >Rewards</motion.button>
         </NavLink>
       </div>   
