@@ -66,7 +66,7 @@ const [refresh, setRfresh] = useState(false)
          />      
       {task && (
         <div className='containerListTasks' > 
-          {task.map((ele)=>(// cuando el map está entre parentesis utilizamos parentesis en el callback de map.         
+          {task.map((ele)=>(
             <motion.div key={ele._id}className='cardTasksEdit'         
             initial={{             
               x:-300,
@@ -88,7 +88,12 @@ const [refresh, setRfresh] = useState(false)
               <button onClick={()=>handleConfirm(ele._id)}>Delete task</button>                   
             </motion.div>             
           ))}       
-        </div>)}
+        </div>)} 
+        {!task && (
+          <div>
+            <h2>No tasks</h2>
+          </div>
+        )}
     </div>
   )
 }      
