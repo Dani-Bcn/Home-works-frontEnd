@@ -96,6 +96,11 @@ const handleDelete = async (e)=>{
    {child &&
      <NavLink className="containerTasksDone" to="/ListChilds"><button >Done</button> </NavLink>                   
    }
+      {!child && (
+          <div>
+            <h2 className='noItems'>No tasks</h2>
+          </div>
+        )}
        
 
         
