@@ -66,7 +66,13 @@
     }  
 
   return (
-    <div className='containerCardInfo'>      
+    <motion.div className='containerCardInfo'
+    animate={{
+      opacity:[0,1]}}
+    transition={{
+      duration:1
+    }}    
+  >            
       {child && (
         <div  className='cardInfo'>           
           <motion.img width={100} src={child.imageUrl}
@@ -114,16 +120,16 @@
             }}> Cups : {child.cups}</motion.h2>      
         </div>
       )}   
-      <div className='cardInfo'>        
-        <NavLink to={`/EditChild/${id}`}>
-          <motion.button
+      <motion.div className='cardInfo'>
+  
+      <NavLink to={`/EditChild/${id}`}>
+        <motion.button
           animate={{
             opacity:[0,1],
             x:[50,0]
           }}
           transition={{
             delay:0.2,
-            duration:1
           }}
           >Edit child</motion.button>
         </NavLink>         
@@ -187,7 +193,7 @@
           }}
          >Rewards</motion.button>
         </NavLink>
-      </div>     
-    </div>   
+      </motion.div>     
+    </motion.div>   
   )
 } 
