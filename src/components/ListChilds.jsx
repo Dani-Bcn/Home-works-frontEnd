@@ -29,7 +29,13 @@ const [childs, setChilds] = useState("");
      console.log(childs)
   }  
   return (
-    <div>    
+    <motion.div
+    animate={{
+      opacity:[0,1]
+    }}
+    transition={{
+      duration:1
+    }}>    
       <motion.h4 
           animate={{
             x:[-100,50,0],
@@ -81,7 +87,7 @@ const [childs, setChilds] = useState("");
         <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>           
         </motion.div>
         )}      
-    </div>
+    </motion.div>
   )
 }
 

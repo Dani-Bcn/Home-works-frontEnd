@@ -47,7 +47,13 @@ const [refresh, setRfresh] = useState(false)
       }   
   }
   return (
-  <div className='tasksBack'>
+  <motion.div className='tasksBack'
+  animate={{
+    opacity:[0,1]
+  }}
+  transition={{
+    duration:1
+  }}>
       <NavLink to="/CreateTask">
         <motion.button className='butt'
             animate={{
@@ -94,6 +100,6 @@ const [refresh, setRfresh] = useState(false)
             <h2 className='noItems'>No tasks</h2>
           </div>
         )}
-    </div>
+    </motion.div>
   )
 }      
