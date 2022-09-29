@@ -26,7 +26,7 @@ const Help = () => {
             <h2>
                 This section is where the children will work, here they will see the tasks they must do and once a task is completed they must click on it to finish this task.
                 <br />
-                They will also have the rewards tab to be able to see the rewards, the rewards, the points and cups.          
+                They will also have the rewards tab to be able to see the rewards, the points and cups.          
             </h2>                     
             <hr />   
             <h1>Points and rewards</h1>
