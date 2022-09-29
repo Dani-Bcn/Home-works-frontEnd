@@ -122,7 +122,8 @@
             x:[50,0]
           }}
           transition={{
-            delay:0.2
+            delay:0.2,
+            duration:1
           }}
           >Edit child</motion.button>
         </NavLink>         

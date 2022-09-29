@@ -1,8 +1,16 @@
 import React from 'react';
+import {motion} from 'framer-motion'
 
 const Help = () => {
     return (
-      <div className='containerHelp'>
+      <motion.div className='containerHelp'
+        animate={{
+            opacity:[0,1]
+        }}
+        transition={{
+            duration:1.5
+        }}
+      >
             <h1> This application has two sections, one that belongs to the parents and the other that belongs to the children.</h1>             
             <hr />  
             <h1>Parent's section</h1>       
@@ -35,7 +43,7 @@ const Help = () => {
                 <br />
                 At the end of the month they will obtain the rewards based on the total number of cups obtained.
             </h2>
-        </div>
+        </motion.div>
     );
 }
 export default Help;
