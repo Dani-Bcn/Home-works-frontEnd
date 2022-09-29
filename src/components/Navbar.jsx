@@ -32,6 +32,7 @@ return (
         {!isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/login"><h3>Login</h3></NavLink>}
         {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/ListChilds"><h3>Parents</h3></NavLink>}
         {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Tasks"><h3>Task</h3></NavLink>}  
+        {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Help"><h3>Help</h3></Help>}  
       </div>
                        
      

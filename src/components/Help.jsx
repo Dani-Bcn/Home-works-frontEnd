@@ -19,6 +19,11 @@ const Help = () => {
             <h1>Points and rewards </h1>
             <h2>               
                 In the rewards tab we can see the points, rewards and cups won so far.
+                The points will be equivalent to minutes of leisure
+                Each time the child completes a task, the points for that task will be added.
+                The points will be added throughout the month to get cups
+                for every 500 points you will win a cup
+                At the end of the month they will obtain the rewards based on the total number of cups obtained
             </h2>
         </div>
     );
