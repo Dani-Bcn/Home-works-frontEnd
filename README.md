@@ -38,8 +38,8 @@ npm run start
 - User can add tasks 
 - User can edit tasks
 - User can delete tasks
-- User can add reset points
-- User can add reset cups
+- User can reset points
+- User can reset cups
 
 ---
 
