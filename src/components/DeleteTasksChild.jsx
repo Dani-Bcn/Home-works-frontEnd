@@ -5,31 +5,32 @@ import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 import { NavLink , useParams} from 'react-router-dom';
 import {motion} from 'framer-motion'
-export default function ListTasks() {
-const {id} = useParams()
-const [child, setChild] = useState(false)
-const [task, setTask] = useState(null); 
-useEffect(()=>{
-  const getDataTasksChilds = async () => {
-     try {      
-       const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);     
-       setChild(getChild.data.data)   
-     } catch (error) { 
-       console.error(error); 
-     } 
-   }   
-   getDataTasksChilds() 
 
-  const getData = async () => {
-      try {
-          const response = await axios.get(`${process.env.REACT_APP_API_URL}/task/`);       
-          setTask(response.data.data)
-      } catch (error) {
-          console.error(error); 
-      }
-  }
-  getData();   
-},[task]); 
+export default function ListTasks() {
+  const {id} = useParams()
+  const [child, setChild] = useState(false)
+  const [task, setTask] = useState(null); 
+  useEffect(()=>{
+    const getDataTasksChilds = async () => {
+      try {      
+        const getChild = await axios.get(`${process.env.REACT_APP_API_URL}/child/${id}`);     
+        setChild(getChild.data.data)   
+      } catch (error) { 
+        console.error(error); 
+      } 
+    }   
+    getDataTasksChilds() 
+
+    const getData = async () => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/task/`);       
+            setTask(response.data.data)
+        } catch (error) {
+            console.error(error); 
+        }
+    }
+    getData();   
+  },[task]); 
 
 const handleConfirm=(e)=>{
   Swal.fire({
@@ -50,6 +51,7 @@ const handleDelete = async (e)=>{
         console.log(error)
     }
 }
+
   return (
     <div>
       <motion.h2
@@ -100,12 +102,7 @@ const handleDelete = async (e)=>{
           <div>
             <h2 className='noItems'>No tasks</h2>
           </div>
-        )}
-      
-
-     
-
-        
+        )}        
       </div>
   )
 }      

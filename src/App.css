@@ -27,7 +27,7 @@ body{
 hr{
   width: 80%;
   height: 1px;
-  margin: 0 auto;
+  margin: 10px auto;
   background-color: rgb(166, 166, 166);
 }
 img{
@@ -458,15 +458,14 @@ circle{
   margin: 500px;
 }
 .containerHelp{
-  width: 90%;
+  width: 350px;
   margin:  0 auto;
-  padding: 30px;
   backdrop-filter: blur(15px);
 }
 .containerHelp  h2{
-  font-size: 15px;
+  font-size: 20px;
 }
 .containerHelp  h1{
-  font-size: 15px;
+  font-size: 20px;
 }
 

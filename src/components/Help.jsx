@@ -4,6 +4,7 @@ const Help = () => {
     return (
       <div className='containerHelp'>
             <h1> This application has two sections, one that belongs to the parents and the other that belongs to the children.</h1>             
+            <hr />  
             <h1>Parent's section</h1>       
             <h2>               
                 In the parents section we can add a child, once we have the children that we have decided, we can access their information and edit this child.    
@@ -18,10 +19,10 @@ const Help = () => {
                 This section is where the children will work, here they will see the tasks they must do and once a task is completed they must click on it to finish this task.
                 <br />
                 They will also have the rewards tab to be able to see the rewards, the rewards, the points and cups.          
-            </h2>
+            </h2>                     
+            <hr />   
             <h1>Points and rewards</h1>
-            <h2>         
-                <hr />      
+            <h2>   
                 In the rewards tab we can see the points, rewards and cups won so far.
                 <br />
                 The points will be equivalent to minutes of leisure
