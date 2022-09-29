@@ -114,11 +114,7 @@
             }}> Cups : {child.cups}</motion.h2>      
         </div>
       )}   
-      <div className='noItems'>
-          {!child && <p>child not found</p>}
-      </div>
-      <div className='cardInfo'>
-        
+      <div className='cardInfo'>        
         <NavLink to={`/EditChild/${id}`}>
           <motion.button
           animate={{
@@ -190,7 +186,7 @@
           }}
          >Rewards</motion.button>
         </NavLink>
-      </div>   
+      </div>     
     </div>   
   )
 } 
