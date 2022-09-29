@@ -114,8 +114,11 @@
             }}> Cups : {child.cups}</motion.h2>      
         </div>
       )}   
+      <div className='noItems'>
+          {!child && <p>child not found</p>}
+      </div>
       <div className='cardInfo'>
-         {!child && <p>child not found</p>}
+        
         <NavLink to={`/EditChild/${id}`}>
           <motion.button
           animate={{
