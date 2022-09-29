@@ -57,7 +57,7 @@ const [childs, setChilds] = useState("");
       <motion.div className='marginPage'
       animate={{
         x:[100,-50,0],
-        opacity:[0.2,1]
+        opacity:[0,1]
       }}
       transition={{
         duration:1
