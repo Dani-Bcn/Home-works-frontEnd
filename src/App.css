@@ -457,3 +457,16 @@ circle{
 .noItems{  
   margin: 500px;
 }
+.containerHelp{
+  width: 90%;
+  margin:  0 auto;
+  padding: 30px;
+  backdrop-filter: blur(15px);
+}
+.containerHelp  h2{
+  font-size: 15px;
+}
+.containerHelp  h1{
+  font-size: 15px;
+}
+
