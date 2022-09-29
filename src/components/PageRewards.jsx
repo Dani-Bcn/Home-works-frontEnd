@@ -33,7 +33,7 @@ let numCups
 { for (let i = 0; i < numCups; i++) {     
   cupPaint.push(1)
 } 
-cupPaint.map((e,i)=>{
+cupPaint.map((i)=>{
   return cup.splice(i,1,Cup) 
 })   
 }
