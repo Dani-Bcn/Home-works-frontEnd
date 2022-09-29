@@ -29,7 +29,7 @@ const [childs, setChilds] = useState("");
      console.log(childs)
   }  
   return (
-    <motion.div
+    <motion.div    
     animate={{
       opacity:[0,1]
     }}
@@ -52,20 +52,7 @@ const [childs, setChilds] = useState("");
       }}
       transition={{
         delay:0.2
-      }}/>      
-    {!isChilds &&(
-      <motion.div className='marginPage'
-      animate={{
-        x:[100,-50,0],
-        opacity:[0,1]
-      }}
-      transition={{
-        duration:1
-      }}>
-        <h4>We don't have children yet, let's add them</h4> 
-       <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>      
-      </motion.div>        
-    ) }       
+      }}/>        
       {isChilds && (
         <motion.div className='containerListTasks'        
         animate={{
@@ -77,16 +64,29 @@ const [childs, setChilds] = useState("");
           duration:1
         }}        
         >     
-        {childs.map((ele)=>(
+         {childs.map((ele)=>(
           <NavLink key={ele._id} className="cardChildInfo"to={`/InfoChild/${ele._id}`}>                                            
             <h5>Info</h5>
             <img  src={ele.imageUrl} width="100" alt="imgchild" />    
             <h3>{ele.name}</h3>  
           </NavLink>
-         ))}
+         ))}       
         <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>           
         </motion.div>
-        )}      
+        )}    
+         {!isChilds &&(
+      <motion.div className='marginPage'
+      animate={{
+        x:[100,-50,0],
+        opacity:[0,1]
+      }}
+      transition={{
+        duration:1
+      }}>
+        <h4>We don't have children yet, let's add them</h4> 
+       <button onClick={()=>navigate("/AddChild")}><h4>Add child</h4></button>      
+      </motion.div>        
+    ) }         
     </motion.div>
   )
 }
