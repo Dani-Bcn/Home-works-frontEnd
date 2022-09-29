@@ -53,7 +53,7 @@ return (
       {task && (
         <div className='containerListTasks'> 
           {task.map((ele)=>(                     
-            <motion.div  drag whileDrag={"y"}key={ele._id} className='cardTasks'
+            <motion.div key={ele._id} className='cardTasks'
             initial={{             
               x:-300,
               opacity:0
