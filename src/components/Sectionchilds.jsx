@@ -29,8 +29,7 @@ useEffect(() => {
   return (
     <motion.div
     animate={{
-      opacity:[0,1],
-    
+      opacity:[0,1]   
     }}
     transition={{
       duration:1.5

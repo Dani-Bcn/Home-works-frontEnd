@@ -23,7 +23,8 @@ return (
     <motion.div className='nav'
     animate={{
       y:[-200,50,0], 
-    transition:{duration:1.5}   
+      opacity:[0,1],
+      transition:{duration:1.5}   
     }}
     >    
       <div>

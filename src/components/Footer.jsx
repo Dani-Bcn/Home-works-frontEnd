@@ -24,7 +24,8 @@ export default function Footer() {
     <motion.div className='footer'
         animate={{
           y:[200,-100,0], 
-          transition:{duration:1.5}   
+          transition:{duration:1}  ,
+          opacity:[0,1]           
         }}
       >    
       <div>

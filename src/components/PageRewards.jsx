@@ -38,7 +38,13 @@ cupPaint.map((e,i)=>{
 })   
 }
 return (  
-    <div className='backPageRewards'> 
+    <motion.div className='backPageRewards'
+    animate={{
+      opacity:[0,1]
+    }}
+    transition={{
+      duration:1
+    }}>
         {child && (                
             <div>     
         <h4>Rewards for today</h4>             
@@ -57,6 +63,6 @@ return (
                   </div> 
           </div>      
         )}          
-    </div>
+    </motion.div>
   )
 }
