@@ -33,7 +33,7 @@ let numCups
 { for (let i = 0; i < numCups; i++) {     
   cupPaint.push(1)
 } 
-cupPaint.map((i)=>{
+cupPaint.map((e,i)=>{
   return cup.splice(i,1,Cup) 
 })   
 }
@@ -55,6 +55,8 @@ return (
           <h4>You have minutes {child.points} of leisure time</h4>
           <hr />
           <h4>Rewards accumulated in this month</h4>
+          <h4>Points accumulated this month : {child.pointsCup}</h4>
+
           <h4>  Cups : {child.cups}  </h4>
           <div>
                 {cup.map((e, i)=>{
