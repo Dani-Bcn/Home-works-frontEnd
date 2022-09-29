@@ -78,7 +78,8 @@ useEffect(() => {
           {!isChilds &&(    
               <motion.div className='marginPage'
               animate={{
-                x:[200,-50,0]
+                x:[200,-50,0],
+                opacity:[0,1]
               }}
               transition={{
                 duration:1
