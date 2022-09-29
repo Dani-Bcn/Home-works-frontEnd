@@ -40,6 +40,8 @@ npm run start
 - User can delete tasks
 - User can reset points
 - User can reset cups
+- Child can complete tasks
+- Child can see page of his rewards
 
 ---
 
