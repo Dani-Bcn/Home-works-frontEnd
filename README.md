@@ -2,10 +2,9 @@
 
 ## Description
 
-This application is called XXX. It is used for ...
+This application is called HomerWorksForKids. It is used for ...
 
-> Add a picture (logo, design, actual screen, gif, etc, whichever you prefer.)
-![](picture.png)
+> Application created for children's tasks at home
 
 ---
 ## Instructions
@@ -33,15 +32,21 @@ npm run start
 
 ### Backlog
 
-- User can ...
+- User can add children
+- User can edit children
+- User can delete children
+- User can add tasks 
+- User can edit tasks
+- User can delete tasks
+- User can add reset points
+- User can add reset cups
 
 ---
 
 ## Useful links
 
-- [Presentation slides]()
-- [Backend repository]()
-- [Backend deploy]()
-- [Deployed app]()
+- [https://slides.com/daniperez-2/deck-063a6c]()
+- [https://github.com/Dani-Bcn/Tareas-backend]()
+- [https://homework-kids.netlify.app/]()
 
 
