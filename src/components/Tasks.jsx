@@ -4,19 +4,17 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import {motion} from 'framer-motion';
 import Swal from 'sweetalert2';
-import { NavLink , useParams, useNavigate} from 'react-router-dom'
+import { NavLink }from 'react-router-dom'
 
 export default function ListTasks() {
-  const {id} = useParams()
 const [refresh, setRfresh] = useState(false)
-  const navigate = useNavigate()
   const [task, setTask] = useState(null); 
-  const[noRepaeatTasks, setNoRepeatTasks] = useState([])
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/task/`);       
         setTask(response.data.data)
+        console.log(response.data)
       } catch (error) {
         console.error(error); 
       }

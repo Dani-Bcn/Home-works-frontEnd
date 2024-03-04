@@ -15,6 +15,7 @@ const [childs, setChilds] = useState("");
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/mine`, { headers: { Authorization: `Bearer ${storedToken}` }});
         setChilds(response.data.data)
+        console.log(childs)
       } catch (error) {
         console.error(error);
       }

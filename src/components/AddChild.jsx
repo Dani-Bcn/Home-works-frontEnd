@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import {motion} from 'framer-motion'
@@ -8,7 +8,7 @@ export default function AddChild() {
   const storedToken = localStorage.getItem('authToken');
   const date = new Date();  
   const actualYear = date.getFullYear();
-  const[tasks, setTasks] =useState(null)    
+  
   const navigate = useNavigate();
   const [child, setChild] = useState({
     name: '',  
