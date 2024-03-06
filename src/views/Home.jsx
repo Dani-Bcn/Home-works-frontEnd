@@ -36,7 +36,7 @@ export default function Home() {
       transition={{duration:1}}  
     >    
     <div>    
-     <h1>HomeWork<br/>for<br/>kids</h1>
+     <h1 className=''>HomeWork<br/>for<br/>kids</h1>
     </div>    
     </motion.div>   
   )
