@@ -20,7 +20,7 @@ export default function Home() {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/child/mine`,{ headers: { Authorization: `Bearer ${storedToken}` }});
         setChilds(response.data.data)        
       } catch (error) {
-        console.error(error);
+        console.error(response.data.data);
       }
     }
     getData();
