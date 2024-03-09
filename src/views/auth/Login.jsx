@@ -45,9 +45,9 @@ export default function Login() {
         duration:1.5,
       }}
       >
-         <label>Email</label>
+         <title>Email</title>
           <input  required type="email" name="email" value={user.email} onChange={handleChange} />
-          <label>Password</label>
+          <h3>Password</h3>
           <input  required type="password" name="password" value={user.password} onChange={handleChange} />
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
           <button type="submit"><h3>Log in</h3> </button>        
