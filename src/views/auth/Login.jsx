@@ -32,7 +32,7 @@ export default function Login() {
       authenticateUser();
       navigate('../Sectionchilds');
     } catch (error) {
-      setErrorMessage(error.response.data.error)
+      setErrorMessage(error)
     }
   }
   return (   
