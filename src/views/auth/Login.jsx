@@ -49,7 +49,7 @@ export default function Login() {
           <input  required type="email" name="email" value={user.email} onChange={handleChange} />
           <h3>Password</h3>
           <input  required type="password" name="password" value={user.password} onChange={handleChange} />
-          {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+          {errorMessage && {/* <p style={{ color: 'red' }}>{errorMessage}</p> */}}
           <button type="submit"><h3>Log in</h3> </button>        
       </motion.form>      
   )
