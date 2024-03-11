@@ -21,20 +21,12 @@ export default function Footer() {
     }) 
   }
   return (
-    <motion.div className='footer'
-        animate={{
-          y:[200,-100,0],
-          opacity:[0,1]           
-        }}
-        transition={{
-          duratiion:1
-        }}
-      >    
-      <div>
+    <div className=' w-screen h-20 bg-red-200 flex justify-around items-center '>    
+    
         {isLoggedIn && <li><button onClick={() => navigate(-1)} className="styleIcon"></button></li>}
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/User"><h2>{user.username}⚙️</h2></NavLink></li>}
         {isLoggedIn && <li><button onClick={() => handleLogOutUser()}>Log out</button></li>}
-      </div>
-    </motion.div>
+   
+    </div>
   )
 }

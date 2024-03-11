@@ -28,6 +28,7 @@ useEffect(() => {
   }, []);
   return (
     <motion.div
+    className='h-screen'
     animate={{
       opacity:[0,1]   
     }}

@@ -7,6 +7,7 @@ import {motion} from "framer-motion"
 
 export default function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  console.log(user)
   const navigate = useNavigate();
   const handleLogOutUser= ()=>{
     Swal.fire({
@@ -20,14 +21,9 @@ export default function Navbar() {
   }) 
 }
 return (
-    <motion.div  className='bg-red'
-    animate={{
-      y:[-200,50,0], 
-      opacity:[0,1],
-      transition:{duration:1.5}   
-    }}
+    <div  className='bg-red'
     >    
-      <div className='w-96 h-96 flex flex-col bg-red-200'>
+      <div className='w-screen  h-20 flex bg-red-200 justify-around items-center'>
         {isLoggedIn &&<NavLink className={(element) => element.isActive ? 'selected' : ''} to="./Sectionchilds"><h3 className='text-red-600'>Kids</h3></NavLink>}   
         {!isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/signup"><h3>Sign up</h3></NavLink>}
         {!isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/login"><h3>Login</h3></NavLink>}
@@ -35,6 +31,6 @@ return (
         {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Tasks"><h3>Task</h3></NavLink>}  
         {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : ''} to="/Help"><h3>Help</h3></NavLink>}  
       </div>    
-    </motion.div>
+    </div>
   )
 }

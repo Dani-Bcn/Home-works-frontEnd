@@ -26,7 +26,7 @@ export default function Home() {
     getData();
   }, []);
   return (   
-    <motion.div className='logo'
+    <motion.div className='w-screen h-screen'
       
       animate={{
       scale:[0,5,1],
@@ -35,9 +35,9 @@ export default function Home() {
       }}   
       transition={{duration:1}}  
     >    
-    <div>    
+       
      <h1 className=''>HomeWork<br/>for<br/>kids</h1>
-    </div>    
+       
     </motion.div>   
   )
 }     
