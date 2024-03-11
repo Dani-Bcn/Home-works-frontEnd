@@ -1,6 +1,5 @@
-const wwww = require("./bin/www")
-const express = require("express")
-const www = express()
+const www = require("./bin/www")
+
 
 const port = process.env.PORT || 8000
 
